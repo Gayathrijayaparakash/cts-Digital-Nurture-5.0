@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap 5 - Downloaded Files Demo</title>
+
+  <!--
+    Exercise 1.2 — Use downloaded Bootstrap files from this local folder.
+
+    Download Bootstrap 5 (either from npm or bootstrap release zip) and copy these files into this folder:
+      - bootstrap.min.css
+      - bootstrap.bundle.min.js
+      - (optional) bootstrap.min.js (bundle is preferred)
+
+    If your filenames differ, update the link/script paths below.
+  -->
+  <link rel="stylesheet" href="./bootstrap.min.css">
+</head>
+<body class="bg-dark text-light">
+
+  <header class="py-4 border-bottom border-secondary">
+    <div class="container">
+      <h1 class="h3 mb-1">Exercise 1.2 — Bootstrap 5 (Local files)</h1>
+      <p class="text-secondary mb-0">This page expects Bootstrap CSS/JS to be present in ./bootsrap/.</p>
+    </div>
+  </header>
+
+  <main class="container py-4">
+    <div class="row g-3">
+      <div class="col-12 col-md-7">
+        <div class="card bg-secondary-subtle border-secondary">
+          <div class="card-body">
+            <h2 class="h5">Local Bootstrap is working</h2>
+            <p class="text-secondary mb-3">If the button and modal work, your local Bootstrap files are linked correctly.</p>
+
+            <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#localModal">
+              Test Bootstrap JS
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-5">
+        <div class="p-4 rounded-3 border border-secondary bg-dark">
+          <h3 class="h5">Checklist</h3>
+          <ul class="text-secondary mb-0">
+            <li>bootstrap.min.css exists in this folder</li>
+            <li>bootstrap.bundle.min.js exists in this folder</li>
+            <li>Paths in this file match filenames</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal fade" id="localModal" tabindex="-1" aria-labelledby="localModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-light border-secondary">
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title" id="localModalLabel">Local Modal</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">If this opens, your local Bootstrap JS bundle works.</div>
+        <div class="modal-footer border-secondary">
+          <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Local Bootstrap bundle (expected in the same folder) -->
+  <script src="./bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
