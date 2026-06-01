@@ -1,0 +1,86 @@
+/* Global styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #d8ffe2;
+  font-family: Arial, sans-serif;
+  background-color: #030604;
+}
+
+/* Header styles */
+.site-header {
+  padding: 42px 24px;
+  text-align: center;
+  background: radial-gradient(circle at top, rgba(57, 255, 20, 0.22), #050805 58%);
+  border-bottom: 2px solid #39ff14;
+  box-shadow: 0 0 28px rgba(57, 255, 20, 0.28);
+}
+
+.site-header p {
+  color: #a8f7b8;
+}
+
+.status-pill,
+.event-tag {
+  display: inline-block;
+  padding: 7px 12px;
+  color: #050805;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: #39ff14;
+  border-radius: 999px;
+}
+
+/* Main content styles */
+main {
+  width: min(92%, 900px);
+  margin: 32px auto;
+}
+
+.quick-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.quick-stats div {
+  padding: 18px;
+  text-align: center;
+  background-color: #081109;
+  border: 1px solid rgba(57, 255, 20, 0.45);
+  border-radius: 8px;
+}
+
+.quick-stats strong {
+  display: block;
+  color: #39ff14;
+  font-size: 1.8rem;
+}
+
+/* Event card styles */
+.eventCard {
+  margin-bottom: 20px;
+  padding: 24px;
+  background-color: #071008;
+  border: 1px solid rgba(57, 255, 20, 0.5);
+  border-radius: 8px;
+  box-shadow: 0 0 22px rgba(57, 255, 20, 0.12);
+}
+
+/* Reusable button styles */
+.cta-button {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 16px;
+  color: #031004;
+  font-weight: 700;
+  text-decoration: none;
+  background-color: #39ff14;
+  border-radius: 6px;
+  box-shadow: 0 0 16px rgba(57, 255, 20, 0.45);
+}

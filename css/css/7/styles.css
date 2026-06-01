@@ -1,0 +1,51 @@
+/* Page layout */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #d8ffe2;
+  background-color: #030604;
+}
+
+header {
+  padding: 32px 20px;
+  text-align: center;
+  color: #effff2;
+  background-color: #071008;
+  border-bottom: 2px solid #39ff14;
+}
+
+main {
+  width: min(94%, 900px);
+  margin: 34px auto;
+}
+
+/* Event admin table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #071008;
+  box-shadow: 0 0 24px rgba(57, 255, 20, 0.16);
+}
+
+th,
+td {
+  padding: 14px;
+  text-align: center;
+  border: 1px solid rgba(57, 255, 20, 0.4);
+}
+
+th {
+  color: #031004;
+  background-color: #39ff14;
+}
+
+tr:nth-child(even) {
+  background-color: #0c1a0e;
+}
+
+.table-kicker {
+  color: #39ff14;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}

@@ -1,0 +1,81 @@
+/* Debug-friendly base styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #d8ffe2;
+  background-color: #030604;
+}
+
+header {
+  padding: 36px 20px;
+  text-align: center;
+  color: #effff2;
+  background-color: #071008;
+  border-bottom: 2px solid #39ff14;
+}
+
+main {
+  width: min(92%, 1050px);
+  margin: 34px auto;
+}
+
+/* Grid to test at different device widths */
+.debug-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+/* Cards with visible box model properties */
+.eventCard {
+  min-height: 190px;
+  padding: 22px;
+  background-color: #071008;
+  border: 2px solid rgba(57, 255, 20, 0.48);
+  outline: 2px dashed transparent;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.12);
+}
+
+.eventCard:hover {
+  outline-color: #39ff14;
+}
+
+.eventCard p {
+  line-height: 1.65;
+}
+
+.debug-kicker,
+.eventCard span {
+  display: inline-block;
+  padding: 6px 10px;
+  color: #031004;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  background-color: #39ff14;
+  border-radius: 999px;
+}
+
+/* Values to adjust while debugging smaller screens */
+@media (max-width: 768px) {
+  header {
+    padding: 28px 16px;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  .debug-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .eventCard {
+    min-height: auto;
+  }
+}

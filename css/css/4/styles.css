@@ -1,0 +1,57 @@
+/* Page background with fallback color */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #d8ffe2;
+  background-color: #030604;
+  background-image: url("https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-attachment: fixed;
+  background-blend-mode: multiply;
+}
+
+/* Header color overlay */
+.hero {
+  padding: 56px 20px;
+  text-align: center;
+  color: #effff2;
+  background-color: rgba(0, 0, 0, 0.86);
+  border-bottom: 2px solid #39ff14;
+  box-shadow: 0 0 30px rgba(57, 255, 20, 0.28);
+}
+
+/* Main layout */
+main {
+  width: min(92%, 850px);
+  margin: 36px auto;
+}
+
+/* Gradient section header */
+.section-title {
+  padding: 14px 18px;
+  color: #031004;
+  background: linear-gradient(90deg, #39ff14, #b7ff2a);
+  border-radius: 6px;
+}
+
+/* Event card colors */
+.eventCard {
+  margin-top: 18px;
+  padding: 24px;
+  background-color: rgba(7, 16, 8, 0.94);
+  border: 1px solid rgba(57, 255, 20, 0.55);
+  border-radius: 8px;
+  box-shadow: 0 0 24px rgba(57, 255, 20, 0.16);
+}
+
+.hero-chip,
+.event-meta {
+  display: inline-block;
+  padding: 7px 11px;
+  color: #39ff14;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 1px solid #39ff14;
+  border-radius: 999px;
+}

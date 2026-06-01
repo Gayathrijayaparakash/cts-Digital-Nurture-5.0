@@ -1,0 +1,71 @@
+/* Base font setup */
+body {
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+  color: #d8ffe2;
+  background-color: #030604;
+}
+
+/* Header typography */
+header {
+  padding: 48px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #050805, #0b190c);
+  border-bottom: 2px solid #39ff14;
+}
+
+header h1 {
+  font-family: "Merriweather", Georgia, serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #39ff14;
+  text-shadow: 0 0 16px rgba(57, 255, 20, 0.46);
+}
+
+.tagline {
+  font-size: 1.05rem;
+  font-style: italic;
+  letter-spacing: 0;
+}
+
+/* Feature article text */
+.feature {
+  width: min(90%, 760px);
+  margin: 36px auto;
+  padding: 28px;
+  background-color: #071008;
+  border: 1px solid rgba(57, 255, 20, 0.45);
+  border-radius: 8px;
+  box-shadow: 0 0 22px rgba(57, 255, 20, 0.14);
+}
+
+.feature h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.description {
+  margin-top: 16px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  text-align: justify;
+  letter-spacing: 0;
+}
+
+.kicker {
+  color: #39ff14;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+blockquote {
+  margin: 24px 0 0;
+  padding-left: 18px;
+  color: #39ff14;
+  font-family: "Merriweather", Georgia, serif;
+  font-style: italic;
+  border-left: 4px solid #39ff14;
+}

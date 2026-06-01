@@ -1,0 +1,65 @@
+/* Universal selector reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Element selector for all second-level headings */
+h2 {
+  margin-bottom: 18px;
+  color: #39ff14;
+  font-size: 1.8rem;
+}
+
+/* ID selector for the main banner */
+#mainHeader {
+  padding: 40px 20px;
+  text-align: center;
+  color: #eaffee;
+  background: radial-gradient(circle at center, rgba(57, 255, 20, 0.2), #030604 70%);
+  border-bottom: 2px solid #39ff14;
+}
+
+/* Layout wrapper */
+main {
+  width: min(92%, 900px);
+  margin: 32px auto;
+}
+
+body {
+  color: #d8ffe2;
+  font-family: Arial, sans-serif;
+  background-color: #030604;
+}
+
+/* Class selector for event containers */
+.eventCard {
+  margin-bottom: 20px;
+  padding: 22px;
+  background-color: #071008;
+  border: 1px solid rgba(57, 255, 20, 0.5);
+  border-left: 6px solid #39ff14;
+  border-radius: 8px;
+  box-shadow: 0 0 18px rgba(57, 255, 20, 0.12);
+}
+
+/* Grouping selector for event titles and descriptions */
+h3,
+p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.glow-label,
+.slot {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 6px 10px;
+  color: #031004;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: #39ff14;
+  border-radius: 999px;
+}

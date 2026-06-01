@@ -1,0 +1,84 @@
+/* Base page */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #d8ffe2;
+  background-color: #030604;
+}
+
+header {
+  padding: 30px 20px;
+  text-align: center;
+  color: #effff2;
+  background-color: #071008;
+  border-bottom: 2px solid #39ff14;
+}
+
+main {
+  width: min(92%, 820px);
+  margin: 32px auto;
+}
+
+/* Box model example */
+.eventCard {
+  margin: 24px 0;
+  padding: 24px;
+  border: 3px solid #39ff14;
+  background-color: #071008;
+  box-shadow: 0 0 22px rgba(57, 255, 20, 0.15);
+}
+
+/* Form spacing and outline */
+form {
+  padding: 22px;
+  background-color: #071008;
+  border: 1px solid rgba(57, 255, 20, 0.45);
+}
+
+label {
+  display: block;
+  margin-top: 14px;
+  font-weight: 700;
+}
+
+input {
+  width: 100%;
+  margin-top: 6px;
+  padding: 12px;
+  color: #d8ffe2;
+  background-color: #030604;
+  border: 1px solid rgba(57, 255, 20, 0.5);
+}
+
+.selected-field {
+  outline: 3px solid #39ff14;
+  outline-offset: 3px;
+}
+
+/* Visibility comparison */
+.visibility-demo {
+  margin-top: 24px;
+  padding: 18px;
+  background-color: #071008;
+  border: 1px solid rgba(57, 255, 20, 0.35);
+}
+
+.hidden-box {
+  visibility: hidden;
+}
+
+.none-box {
+  display: none;
+}
+
+.form-kicker,
+.event-badge {
+  display: inline-block;
+  padding: 6px 10px;
+  color: #031004;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  background-color: #39ff14;
+  border-radius: 999px;
+}

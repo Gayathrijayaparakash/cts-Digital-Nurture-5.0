@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 8 - Box Model and Layout</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <span class="form-kicker">Box model lab</span>
+    <h1>Event Registration</h1>
+  </header>
+
+  <main>
+    <section class="eventCard">
+      <span class="event-badge">Hands-on</span>
+      <h2>Community Garden Workshop</h2>
+      <p>Learn how to plant seasonal herbs and maintain shared garden beds.</p>
+    </section>
+
+    <form>
+      <label for="name">Name</label>
+      <input id="name" class="selected-field" type="text" placeholder="Your name">
+
+      <label for="email">Email</label>
+      <input id="email" type="email" placeholder="you@example.com">
+    </form>
+
+    <div class="visibility-demo">
+      <p class="hidden-box">This space remains because visibility is hidden.</p>
+      <p class="none-box">This element is removed because display is none.</p>
+      <p>The first hidden example keeps layout space; the second does not appear.</p>
+    </div>
+  </main>
+</body>
+</html>
