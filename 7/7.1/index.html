@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 7.1 - Bootstrap Typography Utilities</title>
+
+  <link rel="stylesheet" href="../../1/1.2/bootstrap.min.css" />
+
+  <style>
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(255, 193, 7, 0.16), transparent 28rem),
+        linear-gradient(135deg, #101418 0%, #1b2533 50%, #111827 100%);
+    }
+
+    .page-shell {
+      max-width: 1120px;
+    }
+
+    .sample-card {
+      border-radius: 8px;
+      min-height: 100%;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .sample-card:hover,
+    .sample-card.is-selected {
+      transform: translateY(-3px);
+      border-color: rgba(255, 193, 7, 0.65);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.22);
+    }
+
+    .utility-label {
+      display: inline-block;
+      margin-top: 0.75rem;
+    }
+
+    .text-muted-demo {
+      color: var(--bs-secondary-color);
+    }
+  </style>
+</head>
+<body class="text-light">
+  <header class="border-bottom border-secondary-subtle py-4">
+    <div class="container page-shell">
+      <p class="text-warning fw-semibold mb-1">Exercise 7.1</p>
+      <h1 class="display-1 fw-bold mb-2">Typography</h1>
+      <p class="lead text-secondary mb-0">
+        A sample page showing Bootstrap typography utilities such as display headings, lead text, muted text, and font weight classes.
+      </p>
+    </div>
+  </header>
+
+  <main class="container page-shell py-4">
+    <section class="card bg-body-tertiary border-secondary mb-4">
+      <div class="card-body p-4">
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+          <div>
+            <h2 class="h5 mb-1">Selected utility</h2>
+            <p id="selectedUtility" class="text-secondary mb-0">Click any typography sample to view its class name.</p>
+          </div>
+          <span class="badge text-bg-warning text-dark">Bootstrap text utilities</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="row g-4" aria-label="Bootstrap typography utility examples">
+      <div class="col-12 col-lg-6">
+        <article class="sample-card card bg-body-tertiary border-secondary" data-utility="display-1 fw-bold">
+          <div class="card-body p-4">
+            <p class="text-secondary small mb-2">Display heading</p>
+            <div class="display-1 fw-bold">display-1</div>
+            <span class="badge text-bg-warning text-dark utility-label">display-1 fw-bold</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-lg-6">
+        <article class="sample-card card bg-body-tertiary border-secondary" data-utility="lead">
+          <div class="card-body p-4">
+            <p class="text-secondary small mb-2">Lead paragraph</p>
+            <p class="lead mb-0">
+              This paragraph uses the Bootstrap <code>lead</code> class for larger, more prominent text.
+            </p>
+            <span class="badge text-bg-info utility-label">lead</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-6 col-xl-4">
+        <article class="sample-card card bg-body-tertiary border-secondary" data-utility="text-muted">
+          <div class="card-body p-4">
+            <p class="text-secondary small mb-2">Muted text</p>
+            <p class="text-muted-demo mb-0">
+              Muted text is useful for helper notes, captions, timestamps, and less important details.
+            </p>
+            <span class="badge text-bg-secondary utility-label">text-muted</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-6 col-xl-4">
+        <article class="sample-card card bg-body-tertiary border-secondary" data-utility="fw-bold">
+          <div class="card-body p-4">
+            <p class="text-secondary small mb-2">Bold weight</p>
+            <p class="fw-bold mb-0">
+              This line uses <code>fw-bold</code> to make text stand out strongly.
+            </p>
+            <span class="badge text-bg-primary utility-label">fw-bold</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-6 col-xl-4">
+        <article class="sample-card card bg-body-tertiary border-secondary" data-utility="fw-semibold">
+          <div class="card-body p-4">
+            <p class="text-secondary small mb-2">Semibold weight</p>
+            <p class="fw-semibold mb-0">
+              This line uses <code>fw-semibold</code>, a softer emphasis than bold.
+            </p>
+            <span class="badge text-bg-success utility-label">fw-semibold</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-6 col-xl-4">
+        <article class="sample-card card bg-body-tertiary border-secondary" data-utility="text-uppercase">
+          <div class="card-body p-4">
+            <p class="text-secondary small mb-2">Uppercase transform</p>
+            <p class="text-uppercase mb-0">
+              uppercase text utility
+            </p>
+            <span class="badge text-bg-danger utility-label">text-uppercase</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-6 col-xl-4">
+        <article class="sample-card card bg-body-tertiary border-secondary" data-utility="text-center">
+          <div class="card-body p-4">
+            <p class="text-secondary small mb-2">Text alignment</p>
+            <p class="text-center mb-0">
+              This text is centered with <code>text-center</code>.
+            </p>
+            <span class="badge text-bg-info utility-label">text-center</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-6 col-xl-4">
+        <article class="sample-card card bg-body-tertiary border-secondary" data-utility="fst-italic">
+          <div class="card-body p-4">
+            <p class="text-secondary small mb-2">Italic style</p>
+            <p class="fst-italic mb-0">
+              This sentence uses <code>fst-italic</code> for italic text.
+            </p>
+            <span class="badge text-bg-light text-dark utility-label">fst-italic</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="card bg-body-tertiary border-secondary mt-4">
+      <div class="card-body p-4">
+        <h2 class="h5 mb-3">Typography utility summary</h2>
+        <div class="table-responsive">
+          <table class="table table-dark table-striped table-hover align-middle mb-0">
+            <thead>
+              <tr>
+                <th scope="col">Utility</th>
+                <th scope="col">Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>display-1</code></td>
+                <td>Creates a very large display heading.</td>
+              </tr>
+              <tr>
+                <td><code>lead</code></td>
+                <td>Makes paragraph text larger and more prominent.</td>
+              </tr>
+              <tr>
+                <td><code>text-muted</code></td>
+                <td>Shows secondary or less important text.</td>
+              </tr>
+              <tr>
+                <td><code>fw-bold</code></td>
+                <td>Applies bold font weight.</td>
+              </tr>
+              <tr>
+                <td><code>text-uppercase</code></td>
+                <td>Transforms text to uppercase.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>

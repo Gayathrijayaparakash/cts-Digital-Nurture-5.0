@@ -1,0 +1,24 @@
+{
+  "name": "19.2",
+  "version": "1.0.0",
+  "description": "Exercise 19.2 customizing Bootstrap primary colors and border radius with Sass variables.",
+  "type": "module",
+  "scripts": {
+    "build:css": "sass --load-path=node_modules src/scss/styles.scss css/styles.css",
+    "watch:css": "sass --load-path=node_modules --watch src/scss/styles.scss css/styles.css",
+    "dev": "vite --host 127.0.0.1",
+    "build": "npm run build:css && vite build",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.8"
+  },
+  "devDependencies": {
+    "sass": "^1.100.0",
+    "vite": "^8.0.16"
+  }
+}

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 10.1 - Responsive Bootstrap Navbar</title>
+
+  <link rel="stylesheet" href="../../1/1.2/bootstrap.min.css" />
+
+  <style>
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(13, 110, 253, 0.18), transparent 28rem),
+        linear-gradient(135deg, #101418 0%, #1b2533 50%, #111827 100%);
+    }
+
+    .page-shell {
+      max-width: 1120px;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      background: rgba(13, 110, 253, 0.18);
+      border: 1px solid rgba(13, 110, 253, 0.36);
+    }
+
+    .hero-panel {
+      border-radius: 8px;
+    }
+
+    .navbar {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .search-input {
+      min-width: min(100%, 220px);
+    }
+
+    .search-card {
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+    }
+
+    .search-card.is-match {
+      transform: translateY(-3px);
+      border-color: rgba(13, 110, 253, 0.8) !important;
+      box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.16), 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    }
+
+    .search-card.is-hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body class="text-light">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top" aria-label="Primary navigation">
+    <div class="container page-shell">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <span class="brand-mark">B</span>
+        <span class="fw-semibold">Bootstrap Hub</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div id="mainNavbar" class="collapse navbar-collapse">
+        <ul class="navbar-nav me-auto mb-3 mb-lg-0 ms-lg-4">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#pricing">Pricing</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              More
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#docs">Docs</a></li>
+              <li><a class="dropdown-item" href="#support">Support</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#contact">Contact</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <form id="searchForm" class="d-flex gap-2" role="search">
+          <input id="searchInput" class="form-control search-input bg-dark text-light border-secondary" type="search" placeholder="Search" aria-label="Search" required />
+          <button class="btn btn-outline-primary" type="submit">Search</button>
+          <button id="clearSearchButton" class="btn btn-outline-secondary" type="button">Clear</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container page-shell py-4">
+    <div id="searchAlert" class="alert alert-primary border-primary d-none" role="status"></div>
+
+    <section id="home" class="hero-panel bg-body-tertiary border border-secondary p-4 p-md-5 mb-4">
+      <p class="text-primary fw-semibold mb-1">Exercise 10.1</p>
+      <h1 class="display-6 fw-bold mb-3">Responsive Navbar with Logo, Links, and Search</h1>
+      <p class="lead text-secondary mb-0">
+        Resize the page to see the navigation collapse into a mobile menu powered by the local Bootstrap bundle.
+      </p>
+    </section>
+
+    <section id="features" class="row g-4">
+      <div class="col-12 col-md-4">
+        <div class="search-card bg-body-tertiary border border-secondary rounded-2 p-4 h-100" data-search="logo brand navbar-brand bootstrap hub">
+          <h2 class="h5">Logo</h2>
+          <p class="text-secondary mb-0">The brand area uses <code>navbar-brand</code> with a simple logo mark.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="search-card bg-body-tertiary border border-secondary rounded-2 p-4 h-100" data-search="links navigation navbar-nav nav-item nav-link home features pricing">
+          <h2 class="h5">Links</h2>
+          <p class="text-secondary mb-0">Navigation links use <code>navbar-nav</code>, <code>nav-item</code>, and <code>nav-link</code>.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="search-card bg-body-tertiary border border-secondary rounded-2 p-4 h-100" data-search="search form input button d-flex">
+          <h2 class="h5">Search</h2>
+          <p class="text-secondary mb-0">The search form uses Bootstrap form and button classes inside the navbar.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card bg-body-tertiary border-secondary mt-4">
+      <div class="card-body p-4">
+        <h2 class="h5 mb-3">Class summary</h2>
+        <div class="table-responsive">
+          <table class="table table-dark table-striped table-hover align-middle mb-0">
+            <thead>
+              <tr>
+                <th scope="col">Class</th>
+                <th scope="col">Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>navbar navbar-expand-lg</code></td>
+                <td>Creates a responsive navbar that expands from large screens.</td>
+              </tr>
+              <tr>
+                <td><code>navbar-brand</code></td>
+                <td>Styles the logo and brand name.</td>
+              </tr>
+              <tr>
+                <td><code>collapse navbar-collapse</code></td>
+                <td>Wraps collapsible links and search form for mobile screens.</td>
+              </tr>
+              <tr>
+                <td><code>d-flex</code></td>
+                <td>Lays out the search input and button in a row.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../../1/1.2/bootstrap.bundle.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

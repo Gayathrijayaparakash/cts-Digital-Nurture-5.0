@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 11.1 - Bootstrap Profile Card</title>
+
+  <link rel="stylesheet" href="../../1/1.2/bootstrap.min.css" />
+
+  <style>
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(13, 110, 253, 0.18), transparent 28rem),
+        linear-gradient(135deg, #101418 0%, #1b2533 50%, #111827 100%);
+    }
+
+    .page-shell {
+      max-width: 1040px;
+    }
+
+    .profile-card {
+      max-width: 420px;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .profile-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(13, 110, 253, 0.65);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.24);
+    }
+
+    .card-img-top {
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .stat-box {
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body class="text-light">
+  <header class="border-bottom border-secondary-subtle py-4">
+    <div class="container page-shell">
+      <p class="text-primary fw-semibold mb-1">Exercise 11.1</p>
+      <h1 class="display-6 fw-bold mb-2">Bootstrap Profile Card</h1>
+      <p class="lead text-secondary mb-0">
+        Create a profile card using <code>card</code>, <code>card-img-top</code>, <code>card-body</code>, and <code>card-title</code>.
+      </p>
+    </div>
+  </header>
+
+  <main class="container page-shell py-4">
+    <div class="row g-4 align-items-center">
+      <div class="col-12 col-lg-5 d-flex justify-content-center justify-content-lg-start">
+        <article class="card profile-card bg-body-tertiary border-secondary">
+          <img
+            class="card-img-top"
+            alt="Profile banner illustration"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='840' height='440' viewBox='0 0 840 440'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop stop-color='%230d6efd'/%3E%3Cstop offset='1' stop-color='%230dcaf0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='840' height='440' fill='%23111827'/%3E%3Ccircle cx='670' cy='80' r='170' fill='url(%23g)' opacity='.75'/%3E%3Ccircle cx='210' cy='390' r='230' fill='%236f42c1' opacity='.5'/%3E%3Ccircle cx='420' cy='205' r='96' fill='%23f8f9fa' opacity='.95'/%3E%3Ccircle cx='420' cy='175' r='38' fill='%230d6efd'/%3E%3Cpath d='M342 282c18-48 138-48 156 0' fill='%230d6efd'/%3E%3C/svg%3E"
+          />
+          <div class="card-body p-4">
+            <div class="d-flex align-items-start justify-content-between gap-3 mb-2">
+              <div>
+                <h2 class="card-title h4 mb-1">Anaya Sharma</h2>
+                <p class="text-secondary mb-0">Frontend Developer</p>
+              </div>
+              <span class="badge text-bg-primary">Pro</span>
+            </div>
+
+            <p class="card-text text-secondary">
+              Builds responsive interfaces with Bootstrap, accessible components, and clean UI patterns.
+            </p>
+
+            <div class="row g-2 mb-4">
+              <div class="col-4">
+                <div class="stat-box text-center p-2">
+                  <div class="fw-bold">42</div>
+                  <div class="text-secondary small">Projects</div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="stat-box text-center p-2">
+                  <div class="fw-bold">18k</div>
+                  <div class="text-secondary small">Views</div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="stat-box text-center p-2">
+                  <div class="fw-bold">96%</div>
+                  <div class="text-secondary small">Rating</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-grid gap-2">
+              <button id="followButton" class="btn btn-primary" type="button">Follow</button>
+              <button class="btn btn-outline-light" type="button">Message</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-lg-7">
+        <section class="card bg-body-tertiary border-secondary">
+          <div class="card-body p-4">
+            <h2 class="h4 mb-3">Required card classes</h2>
+            <div class="table-responsive">
+              <table class="table table-dark table-striped table-hover align-middle mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">Class</th>
+                    <th scope="col">Used for</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>card</code></td>
+                    <td>Creates the main profile card wrapper.</td>
+                  </tr>
+                  <tr>
+                    <td><code>card-img-top</code></td>
+                    <td>Places the profile image at the top of the card.</td>
+                  </tr>
+                  <tr>
+                    <td><code>card-body</code></td>
+                    <td>Wraps the profile text, stats, and buttons.</td>
+                  </tr>
+                  <tr>
+                    <td><code>card-title</code></td>
+                    <td>Styles the profile name as the card heading.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>

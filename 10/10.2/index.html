@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 10.2 - Bootstrap Nav Tabs and Pills</title>
+
+  <link rel="stylesheet" href="../../1/1.2/bootstrap.min.css" />
+
+  <style>
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 82% 12%, rgba(13, 202, 240, 0.16), transparent 28rem),
+        linear-gradient(135deg, #101418 0%, #1b2533 50%, #111827 100%);
+    }
+
+    .page-shell {
+      max-width: 1120px;
+    }
+
+    .demo-card,
+    .tab-panel {
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body class="text-light">
+  <header class="border-bottom border-secondary-subtle py-4">
+    <div class="container page-shell">
+      <p class="text-info fw-semibold mb-1">Exercise 10.2</p>
+      <h1 class="display-6 fw-bold mb-2">Tabbed Navigation with Bootstrap Navs</h1>
+      <p class="lead text-secondary mb-0">
+        Use <code>nav</code>, <code>nav-tabs</code>, and <code>nav-pills</code> to create tabbed navigation.
+      </p>
+    </div>
+  </header>
+
+  <main class="container page-shell py-4">
+    <div id="activeStatus" class="alert alert-info border-info" role="status">
+      Active tab: Overview
+    </div>
+
+    <section class="demo-card card bg-body-tertiary border-secondary mb-4">
+      <div class="card-body p-4">
+        <h2 class="h4 mb-3">Basic <code>nav</code></h2>
+        <ul class="nav gap-2">
+          <li class="nav-item">
+            <a class="nav-link active bg-primary text-light rounded-2" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-info" href="#">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-info" href="#">Messages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="demo-card card bg-body-tertiary border-secondary mb-4">
+      <div class="card-body p-4">
+        <h2 class="h4 mb-3"><code>nav-tabs</code> example</h2>
+        <ul class="nav nav-tabs" id="contentTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview-pane" type="button" role="tab" aria-controls="overview-pane" aria-selected="true">
+              Overview
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="details-tab" data-bs-toggle="tab" data-bs-target="#details-pane" type="button" role="tab" aria-controls="details-pane" aria-selected="false">
+              Details
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="settings-tab" data-bs-toggle="tab" data-bs-target="#settings-pane" type="button" role="tab" aria-controls="settings-pane" aria-selected="false">
+              Settings
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content border border-top-0 border-secondary p-4 rounded-bottom" id="contentTabsPanel">
+          <div class="tab-pane fade show active" id="overview-pane" role="tabpanel" aria-labelledby="overview-tab" tabindex="0">
+            <h3 class="h5">Overview</h3>
+            <p class="text-secondary mb-0">Tabs are useful when related content needs to share the same page area.</p>
+          </div>
+          <div class="tab-pane fade" id="details-pane" role="tabpanel" aria-labelledby="details-tab" tabindex="0">
+            <h3 class="h5">Details</h3>
+            <p class="text-secondary mb-0">Bootstrap tabs need <code>data-bs-toggle="tab"</code> and matching panel IDs.</p>
+          </div>
+          <div class="tab-pane fade" id="settings-pane" role="tabpanel" aria-labelledby="settings-tab" tabindex="0">
+            <h3 class="h5">Settings</h3>
+            <p class="text-secondary mb-0">The local Bootstrap bundle powers the tab switching behavior.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-card card bg-body-tertiary border-secondary">
+      <div class="card-body p-4">
+        <h2 class="h4 mb-3"><code>nav-pills</code> example</h2>
+        <div class="row g-4">
+          <div class="col-12 col-md-4">
+            <div class="nav nav-pills flex-column gap-2" id="lessonPills" role="tablist" aria-orientation="vertical">
+              <button class="nav-link active text-start" id="html-pill" data-bs-toggle="pill" data-bs-target="#html-pane" type="button" role="tab" aria-controls="html-pane" aria-selected="true">
+                HTML
+              </button>
+              <button class="nav-link text-start" id="css-pill" data-bs-toggle="pill" data-bs-target="#css-pane" type="button" role="tab" aria-controls="css-pane" aria-selected="false">
+                CSS
+              </button>
+              <button class="nav-link text-start" id="bootstrap-pill" data-bs-toggle="pill" data-bs-target="#bootstrap-pane" type="button" role="tab" aria-controls="bootstrap-pane" aria-selected="false">
+                Bootstrap
+              </button>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-8">
+            <div class="tab-content tab-panel bg-dark border border-secondary p-4" id="lessonPillsPanel">
+              <div class="tab-pane fade show active" id="html-pane" role="tabpanel" aria-labelledby="html-pill" tabindex="0">
+                <h3 class="h5">HTML pill</h3>
+                <p class="text-secondary mb-0">Pills are commonly used for compact navigation, filters, and dashboard sections.</p>
+              </div>
+              <div class="tab-pane fade" id="css-pane" role="tabpanel" aria-labelledby="css-pill" tabindex="0">
+                <h3 class="h5">CSS pill</h3>
+                <p class="text-secondary mb-0">Use <code>nav-pills</code> when you want rounded active states instead of tab borders.</p>
+              </div>
+              <div class="tab-pane fade" id="bootstrap-pane" role="tabpanel" aria-labelledby="bootstrap-pill" tabindex="0">
+                <h3 class="h5">Bootstrap pill</h3>
+                <p class="text-secondary mb-0">The same tab plugin powers both tabs and pills.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../../1/1.2/bootstrap.bundle.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

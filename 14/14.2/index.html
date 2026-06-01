@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 14.2 - Responsive Sidebar</title>
+
+  <link rel="stylesheet" href="../../1/1.2/bootstrap.min.css" />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 16% 12%, rgba(13, 202, 240, 0.14), transparent 24rem),
+        radial-gradient(circle at 84% 18%, rgba(25, 135, 84, 0.16), transparent 22rem),
+        linear-gradient(135deg, #101418 0%, #18212f 56%, #111827 100%);
+    }
+
+    .page-shell {
+      max-width: 1120px;
+    }
+
+    .sidebar,
+    .content-panel {
+      border-radius: 8px;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 1.5rem;
+    }
+
+    .sidebar-link {
+      border-radius: 6px;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .sidebar-link:hover,
+    .sidebar-link:focus {
+      background-color: rgba(13, 202, 240, 0.12) !important;
+      color: #8be9ff !important;
+    }
+
+    .status-dot {
+      width: 0.65rem;
+      height: 0.65rem;
+    }
+  </style>
+</head>
+<body class="text-light">
+  <header class="border-bottom border-secondary-subtle py-5">
+    <div class="container page-shell">
+      <p class="text-info fw-semibold mb-2">Exercise 14.2</p>
+      <h1 class="display-6 fw-bold mb-3">Responsive Sidebar</h1>
+      <p class="lead text-secondary mb-3">
+        The sidebar uses <code>d-none d-md-block</code>, so it is hidden on phones and visible on tablets and desktops.
+      </p>
+      <div class="d-flex flex-wrap gap-2">
+        <span class="badge text-bg-info">d-none</span>
+        <span class="badge text-bg-info">d-md-block</span>
+        <span class="badge text-bg-secondary">Bootstrap Grid</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page-shell py-5">
+    <div class="row g-4">
+      <aside class="col-md-4 col-lg-3 d-none d-md-block" aria-label="Page sidebar">
+        <nav class="sidebar bg-body-tertiary border border-secondary p-4 shadow-sm">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <h2 class="h5 mb-0">Sidebar</h2>
+            <span class="badge text-bg-success">Tablet+</span>
+          </div>
+          <div class="list-group list-group-flush">
+            <a class="sidebar-link list-group-item list-group-item-action bg-primary text-white border-0 px-3 mb-2 active" href="#overview">
+              Overview
+            </a>
+            <a class="sidebar-link list-group-item list-group-item-action bg-transparent text-light border-0 px-3 mb-2" href="#activity">
+              Activity
+            </a>
+            <a class="sidebar-link list-group-item list-group-item-action bg-transparent text-light border-0 px-3" href="#settings">
+              Settings
+            </a>
+          </div>
+
+          <div class="border-top border-secondary-subtle mt-4 pt-4">
+            <div class="d-flex align-items-center gap-2 text-success mb-2">
+              <span class="status-dot rounded-circle bg-success d-inline-block"></span>
+              <span class="fw-semibold">Visible from md</span>
+            </div>
+            <p class="small text-secondary mb-0">
+              Resize below 768px and this sidebar disappears.
+            </p>
+          </div>
+        </nav>
+      </aside>
+
+      <section class="col-12 col-md-8 col-lg-9">
+        <div class="d-md-none alert alert-info mb-4" role="alert">
+          The sidebar is hidden on this small screen. It appears from tablet width upward.
+        </div>
+
+        <article id="overview" class="content-panel bg-body-tertiary border border-secondary p-4 p-lg-5 mb-4 shadow-sm">
+          <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-3">
+            <h2 class="h4 mb-0">Overview</h2>
+            <span class="badge text-bg-primary">Main Content</span>
+          </div>
+          <p class="text-secondary mb-0">
+            On mobile, this content fills the whole row. From the medium breakpoint upward, Bootstrap creates room for the sidebar.
+          </p>
+        </article>
+
+        <article id="activity" class="content-panel bg-primary-subtle text-primary-emphasis border border-primary-subtle p-4 p-lg-5 mb-4">
+          <h2 class="h4 mb-3">Activity</h2>
+          <div class="row g-3">
+            <div class="col-12 col-sm-6">
+              <div class="bg-body border border-primary-subtle rounded-2 p-3 h-100">
+                <p class="fw-semibold mb-1">Mobile</p>
+                <p class="text-secondary mb-0">Content uses the full width.</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="bg-body border border-primary-subtle rounded-2 p-3 h-100">
+                <p class="fw-semibold mb-1">Tablet and Desktop</p>
+                <p class="text-secondary mb-0">Sidebar and content sit side by side.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article id="settings" class="content-panel bg-success-subtle text-success-emphasis border border-success-subtle p-4 p-lg-5">
+          <h2 class="h4 mb-3">Settings</h2>
+          <ul class="mb-0">
+            <li>The sidebar column uses <code>col-md-4 col-lg-3</code>.</li>
+            <li>The content column uses <code>col-12 col-md-8 col-lg-9</code>.</li>
+            <li>The visibility is controlled with <code>d-none d-md-block</code>.</li>
+          </ul>
+        </article>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

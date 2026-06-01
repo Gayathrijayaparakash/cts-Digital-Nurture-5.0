@@ -1,0 +1,16 @@
+$primary: #0f766e;
+$secondary: #475569;
+$body-bg: #f8fafc;
+$body-color: #172033;
+$border-radius: .45rem;
+$border-radius-lg: .55rem;
+
+@import "bootstrap/scss/bootstrap";
+
+body {
+  min-height: 100vh;
+}
+
+.navbar {
+  box-shadow: 0 .5rem 1.5rem rgba(15, 118, 110, .18);
+}

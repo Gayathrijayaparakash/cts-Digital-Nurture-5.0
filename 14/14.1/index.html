@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 14.1 - Responsive Display Utilities</title>
+
+  <link rel="stylesheet" href="../../1/1.2/bootstrap.min.css" />
+
+  <style>
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 18% 14%, rgba(13, 110, 253, 0.16), transparent 28rem),
+        radial-gradient(circle at 82% 16%, rgba(13, 202, 240, 0.13), transparent 24rem),
+        linear-gradient(135deg, #101418 0%, #1b2533 52%, #111827 100%);
+    }
+
+    .page-shell {
+      max-width: 1040px;
+    }
+
+    .demo-panel {
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body class="text-light">
+  <header class="border-bottom border-secondary-subtle py-5">
+    <div class="container page-shell">
+      <p class="text-info fw-semibold mb-2">Exercise 14.1</p>
+      <h1 class="display-6 fw-bold mb-3">Responsive Display Utilities</h1>
+      <p class="lead text-secondary mb-0">
+        Use <code>d-none</code>, <code>d-md-block</code>, and <code>d-lg-flex</code> to hide and show layout sections based on screen size.
+      </p>
+    </div>
+  </header>
+
+  <main class="container page-shell py-5">
+    <section class="bg-body-tertiary border border-secondary demo-panel p-4 mb-4">
+      <h2 class="h4 mb-3">Always Visible Section</h2>
+      <p class="text-secondary mb-0">
+        Resize the browser to see the responsive display utilities change which sections are visible.
+      </p>
+    </section>
+
+    <section class="d-none bg-danger text-white demo-panel p-4 mb-4">
+      <h2 class="h4 mb-2">Hidden Section</h2>
+      <p class="mb-0">
+        This block uses <code>d-none</code>, so it stays hidden on every screen size.
+      </p>
+    </section>
+
+    <section class="d-none d-md-block bg-warning text-dark demo-panel p-4 mb-4">
+      <h2 class="h4 mb-2">Tablet and Desktop Section</h2>
+      <p class="mb-0">
+        This block is hidden on small screens, then appears from medium screens because of <code>d-none d-md-block</code>.
+      </p>
+    </section>
+
+    <section class="d-none d-lg-flex align-items-center justify-content-between gap-4 bg-primary text-white demo-panel p-4 mb-4">
+      <div>
+        <h2 class="h4 mb-2">Large Screen Flex Section</h2>
+        <p class="text-white-50 mb-0">
+          This block appears only on large screens and becomes a flex layout with <code>d-none d-lg-flex</code>.
+        </p>
+      </div>
+      <button class="btn btn-light" type="button">Large View Action</button>
+    </section>
+
+    <section class="row g-4">
+      <div class="col-12 col-md-6">
+        <article class="bg-success-subtle text-success-emphasis border border-success-subtle demo-panel p-4 h-100">
+          <h2 class="h5 mb-3">Class Summary</h2>
+          <ul class="mb-0">
+            <li><code>d-none</code> hides an element.</li>
+            <li><code>d-md-block</code> shows it as a block from medium screens.</li>
+            <li><code>d-lg-flex</code> shows it as flex from large screens.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <article class="bg-info-subtle text-info-emphasis border border-info-subtle demo-panel p-4 h-100">
+          <h2 class="h5 mb-3">Current Exercise Goal</h2>
+          <p class="mb-0">
+            Build sections that appear or disappear at different Bootstrap breakpoints using only responsive display classes.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

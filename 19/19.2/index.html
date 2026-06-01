@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Exercise 19.2 | Bootstrap Sass Variables</title>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+      <div class="container">
+        <a class="navbar-brand fw-semibold" href="#">Exercise 19.2</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="#">Theme</a></li>
+            <li class="nav-item"><a class="nav-link" href="#preview">Preview</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container py-5">
+      <section class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <p class="text-uppercase text-primary fw-bold small mb-2">Bootstrap Sass</p>
+          <h1 class="display-5 fw-bold">Custom primary color and rounded corners</h1>
+          <p class="lead text-secondary">
+            The theme values live in <code>src/scss/_variables.scss</code> and are compiled before Bootstrap's Sass source.
+          </p>
+          <div class="d-flex flex-wrap gap-2">
+            <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#themeModal">View variables</button>
+            <a class="btn btn-outline-primary btn-lg" href="#preview">See preview</a>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="card shadow-sm border-primary">
+            <div class="card-body p-4">
+              <h2 class="h4">Customized values</h2>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item px-0"><code>$primary</code> changes buttons, links, and navbar color.</li>
+                <li class="list-group-item px-0"><code>$border-radius</code> changes cards, buttons, forms, and alerts.</li>
+                <li class="list-group-item px-0"><code>npm run build:css</code> recompiles Bootstrap.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-5" id="preview">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="alert alert-primary mb-0" role="alert">
+              A primary alert using the custom theme color.
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h2 class="h5">Rounded card</h2>
+                <p class="mb-0 text-secondary">This card uses the new Bootstrap radius scale.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="email" class="form-label">Form control</label>
+            <input type="email" class="form-control" id="email" placeholder="student@example.com">
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal fade" id="themeModal" tabindex="-1" aria-labelledby="themeModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5" id="themeModalLabel">Theme source</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Update <code>src/scss/_variables.scss</code>, then run <code>npm run build:css</code> to regenerate <code>css/styles.css</code>.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Got it</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="src/js/main.js"></script>
+  </body>
+</html>

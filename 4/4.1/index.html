@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 4.1 - Sidebar and Content Layout</title>
+
+  <link rel="stylesheet" href="../../1/1.2/bootstrap.min.css" />
+
+  <style>
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 12% 10%, rgba(13, 110, 253, 0.18), transparent 28rem),
+        linear-gradient(135deg, #101418 0%, #172033 50%, #111827 100%);
+    }
+
+    .page-shell {
+      max-width: 1140px;
+    }
+
+    .sidebar-panel,
+    .content-panel,
+    .stat-card {
+      border-radius: 8px;
+    }
+
+    .sidebar-link {
+      border: 1px solid transparent;
+      border-radius: 8px;
+      color: var(--bs-secondary-color);
+      text-decoration: none;
+    }
+
+    .sidebar-link:hover,
+    .sidebar-link.is-active {
+      color: var(--bs-light);
+      background: rgba(13, 110, 253, 0.14);
+      border-color: rgba(13, 110, 253, 0.36);
+    }
+
+    .icon-box {
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      background: rgba(13, 110, 253, 0.14);
+      border: 1px solid rgba(13, 110, 253, 0.34);
+    }
+
+    .layout-outline .sidebar-panel,
+    .layout-outline .content-panel {
+      outline: 2px dashed rgba(13, 202, 240, 0.65);
+      outline-offset: 6px;
+    }
+  </style>
+</head>
+<body class="text-light">
+  <header class="border-bottom border-secondary-subtle py-4">
+    <div class="container page-shell">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+        <div>
+          <p class="text-primary fw-semibold mb-1">Exercise 4.1</p>
+          <h1 class="h3 mb-2">Two-Column Sidebar Layout</h1>
+          <p class="text-secondary mb-0">
+            Sidebar uses <code>col-12 col-md-3</code>; content uses <code>col-12 col-md-9</code>.
+          </p>
+        </div>
+        <div class="text-lg-end">
+          <span id="layoutBadge" class="badge text-bg-primary fs-6">Checking...</span>
+          <div id="viewportText" class="text-secondary small mt-2">Viewport width: -- px</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="layoutDemo" class="container page-shell py-4">
+    <section class="card bg-body-tertiary border-secondary mb-4">
+      <div class="card-body p-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-12 col-lg-8">
+            <h2 class="h5 mb-1">Required grid structure</h2>
+            <p class="text-secondary mb-0">
+              The layout stacks on small screens and becomes a sidebar plus main content area from the <code>md</code> breakpoint.
+            </p>
+          </div>
+          <div class="col-12 col-lg-4 text-lg-end">
+            <button id="outlineButton" class="btn btn-outline-primary" type="button" aria-pressed="false">
+              Show Layout Outline
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="row g-4" aria-label="Sidebar and content layout">
+      <aside class="col-12 col-md-3">
+        <div class="sidebar-panel bg-body-tertiary border border-secondary p-3 h-100">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="icon-box">3</div>
+            <div>
+              <h2 class="h6 mb-0">Sidebar</h2>
+              <div class="text-secondary small"><code>col-md-3</code></div>
+            </div>
+          </div>
+
+          <nav class="nav flex-column gap-2" aria-label="Sidebar navigation">
+            <a class="sidebar-link is-active px-3 py-2" href="#overview">Overview</a>
+            <a class="sidebar-link px-3 py-2" href="#details">Details</a>
+            <a class="sidebar-link px-3 py-2" href="#stats">Stats</a>
+            <a class="sidebar-link px-3 py-2" href="#notes">Notes</a>
+          </nav>
+
+          <hr class="border-secondary my-4" />
+
+          <div class="small text-secondary">
+            On mobile this sidebar takes the full width with <code>col-12</code>. On medium screens and larger it takes 3 of 12 grid columns.
+          </div>
+        </div>
+      </aside>
+
+      <div class="col-12 col-md-9">
+        <div class="content-panel bg-body-tertiary border border-secondary p-4">
+          <section id="overview" class="mb-4">
+            <div class="d-flex gap-3 align-items-start">
+              <div class="icon-box">9</div>
+              <div>
+                <h2 class="h5 mb-2">Content Area</h2>
+                <p class="text-secondary mb-0">
+                  This section uses <code>col-12 col-md-9</code>. It fills the page on mobile and sits beside the sidebar on tablets and desktops.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section id="details" class="mb-4">
+            <h3 class="h6 mb-3">Layout behavior</h3>
+            <div class="row g-3">
+              <div class="col-12 col-lg-4">
+                <div class="stat-card bg-dark border border-secondary p-3 h-100">
+                  <div class="text-secondary small">Mobile</div>
+                  <div class="fw-semibold">Stacked layout</div>
+                  <code>col-12</code>
+                </div>
+              </div>
+              <div class="col-12 col-lg-4">
+                <div class="stat-card bg-dark border border-secondary p-3 h-100">
+                  <div class="text-secondary small">Sidebar</div>
+                  <div class="fw-semibold">3 of 12 columns</div>
+                  <code>col-md-3</code>
+                </div>
+              </div>
+              <div class="col-12 col-lg-4">
+                <div class="stat-card bg-dark border border-secondary p-3 h-100">
+                  <div class="text-secondary small">Content</div>
+                  <div class="fw-semibold">9 of 12 columns</div>
+                  <code>col-md-9</code>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="stats" class="mb-4">
+            <h3 class="h6 mb-3">Example content</h3>
+            <div class="p-3 bg-dark border border-secondary rounded-2">
+              <p class="mb-2">
+                A sidebar layout is useful for dashboards, documentation pages, account settings, admin panels, and profile pages.
+              </p>
+              <p class="text-secondary mb-0">
+                Bootstrap's grid keeps the structure readable: one <code>.container</code>, one <code>.row</code>, then the sidebar and content columns.
+              </p>
+            </div>
+          </section>
+
+          <section id="notes">
+            <h3 class="h6 mb-3">Class summary</h3>
+            <div class="table-responsive">
+              <table class="table table-dark table-striped table-hover align-middle mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">Area</th>
+                    <th scope="col">Classes</th>
+                    <th scope="col">Result</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Wrapper</td>
+                    <td><code>.container</code></td>
+                    <td>Centers the layout and adds responsive spacing.</td>
+                  </tr>
+                  <tr>
+                    <td>Grid row</td>
+                    <td><code>.row g-4</code></td>
+                    <td>Creates columns with consistent gutters.</td>
+                  </tr>
+                  <tr>
+                    <td>Sidebar</td>
+                    <td><code>.col-12 .col-md-3</code></td>
+                    <td>Full width on mobile, 25% width from medium screens.</td>
+                  </tr>
+                  <tr>
+                    <td>Content</td>
+                    <td><code>.col-12 .col-md-9</code></td>
+                    <td>Full width on mobile, 75% width from medium screens.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 2.2 - Bootstrap Structure & Local JS Plugins</title>
+
+  <link rel="stylesheet" href="../../1/1.2/bootstrap.min.css" />
+
+  <style>
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(25, 135, 84, 0.2), transparent 34rem),
+        linear-gradient(135deg, #101418 0%, #1b2229 48%, #161b22 100%);
+    }
+
+    .shell {
+      max-width: 1120px;
+    }
+
+    .feature-icon {
+      width: 44px;
+      height: 44px;
+      flex: 0 0 44px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .status-dot {
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 50%;
+      display: inline-block;
+      background: var(--bs-secondary);
+      box-shadow: 0 0 0 0.25rem rgba(108, 117, 125, 0.18);
+    }
+
+    .status-dot.is-ok {
+      background: var(--bs-success);
+      box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.2);
+    }
+
+    .status-dot.is-error {
+      background: var(--bs-danger);
+      box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.2);
+    }
+
+    .code-path {
+      word-break: break-word;
+    }
+  </style>
+</head>
+<body class="text-light">
+  <header class="py-4 border-bottom border-secondary-subtle">
+    <div class="container shell">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+        <div>
+          <p class="text-success fw-semibold mb-1">Bootstrap local setup</p>
+          <h1 class="h3 mb-1">Exercise 2.2 - Local Bootstrap JS Bundle</h1>
+          <p class="text-secondary mb-0">Modal, collapse, tooltip, accordion, and toast demos using local Bootstrap files.</p>
+        </div>
+        <div class="text-secondary small text-lg-end">
+          <div class="code-path"><code>../../1/1.2/bootstrap.min.css</code></div>
+          <div class="code-path"><code>../../1/1.2/bootstrap.bundle.min.js</code></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container shell py-4">
+    <div id="assetAlert" class="alert alert-secondary border-secondary d-flex align-items-center gap-3" role="status">
+      <span id="assetStatusDot" class="status-dot" aria-hidden="true"></span>
+      <div>
+        <div id="assetStatusTitle" class="fw-semibold">Checking local Bootstrap files...</div>
+        <div id="assetStatusDetails" class="small text-secondary">JavaScript will verify the CSS link and JS bundle path.</div>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-12 col-lg-7">
+        <section class="mb-4">
+          <div class="card bg-body-tertiary border-secondary">
+            <div class="card-body p-4">
+              <div class="d-flex flex-wrap align-items-start justify-content-between gap-3 mb-3">
+                <div>
+                  <h2 class="h5 mb-1">Feature tests</h2>
+                  <p class="text-secondary mb-0">
+                    These components use <code>data-bs-*</code> attributes and Bootstrap's local JavaScript bundle.
+                  </p>
+                </div>
+                <button id="runCheckButton" class="btn btn-outline-success btn-sm" type="button">
+                  Run Self Check
+                </button>
+              </div>
+
+              <div class="d-flex flex-wrap gap-2 mb-3">
+                <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#localModal">
+                  Open Modal
+                </button>
+
+                <button id="collapseButton" class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#demoCollapse" aria-expanded="false" aria-controls="demoCollapse">
+                  Toggle Collapse
+                </button>
+
+                <button class="btn btn-primary" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltips require Popper, which is included in bootstrap.bundle.min.js">
+                  Hover for Tooltip
+                </button>
+
+                <button id="toastButton" class="btn btn-outline-info" type="button">
+                  Show Toast
+                </button>
+              </div>
+
+              <div class="collapse" id="demoCollapse">
+                <div class="p-3 rounded-2 border border-secondary bg-dark text-light">
+                  <div class="fw-semibold mb-2">Collapse content</div>
+                  <p class="text-secondary mb-0">This section expands and collapses through Bootstrap's Collapse plugin.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="card bg-body-tertiary border-secondary">
+            <div class="card-body p-4">
+              <h3 class="h6 mb-3">Live checklist</h3>
+              <div class="list-group list-group-flush rounded-2 overflow-hidden">
+                <div class="list-group-item bg-dark text-light border-secondary d-flex align-items-center justify-content-between gap-3">
+                  <span>Bootstrap CSS detected</span>
+                  <span id="cssBadge" class="badge text-bg-secondary">Pending</span>
+                </div>
+                <div class="list-group-item bg-dark text-light border-secondary d-flex align-items-center justify-content-between gap-3">
+                  <span>Bootstrap JS bundle detected</span>
+                  <span id="jsBadge" class="badge text-bg-secondary">Pending</span>
+                </div>
+                <div class="list-group-item bg-dark text-light border-secondary d-flex align-items-center justify-content-between gap-3">
+                  <span>Tooltip plugin initialized</span>
+                  <span id="tooltipBadge" class="badge text-bg-secondary">Pending</span>
+                </div>
+                <div class="list-group-item bg-dark text-light border-secondary d-flex align-items-center justify-content-between gap-3">
+                  <span>Modal, Collapse, and Toast available</span>
+                  <span id="pluginBadge" class="badge text-bg-secondary">Pending</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="col-12 col-lg-5">
+        <aside class="vstack gap-4">
+          <div class="p-4 rounded-2 border border-secondary bg-dark">
+            <h3 class="h6 mb-3">Bootstrap directory parts</h3>
+            <div class="vstack gap-3">
+              <div class="d-flex gap-3 align-items-start">
+                <div class="feature-icon">CSS</div>
+                <div>
+                  <div class="fw-semibold">CSS folder</div>
+                  <div class="text-secondary small">Compiled styles for layouts, components, utilities, and responsive behavior.</div>
+                </div>
+              </div>
+              <div class="d-flex gap-3 align-items-start">
+                <div class="feature-icon">JS</div>
+                <div>
+                  <div class="fw-semibold">JS folder</div>
+                  <div class="text-secondary small">Interactive plugins such as modal, dropdown, tooltip, collapse, carousel, toast, and accordion behavior.</div>
+                </div>
+              </div>
+              <div class="d-flex gap-3 align-items-start">
+                <div class="feature-icon">ICO</div>
+                <div>
+                  <div class="fw-semibold">Icons folder</div>
+                  <div class="text-secondary small">Optional icon assets. Bootstrap itself works without an icon folder in this sample.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion" id="notesAccordion">
+            <div class="accordion-item bg-body-tertiary border-secondary">
+              <h3 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#notesOne" aria-expanded="true" aria-controls="notesOne">
+                  Why use the bundle?
+                </button>
+              </h3>
+              <div id="notesOne" class="accordion-collapse collapse show" data-bs-parent="#notesAccordion">
+                <div class="accordion-body text-secondary">
+                  <code>bootstrap.bundle.min.js</code> includes Popper, so tooltips and popovers work without adding another script.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item bg-body-tertiary border-secondary">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#notesTwo" aria-expanded="false" aria-controls="notesTwo">
+                  Local file advantage
+                </button>
+              </h3>
+              <div id="notesTwo" class="accordion-collapse collapse" data-bs-parent="#notesAccordion">
+                <div class="accordion-body text-secondary">
+                  Local files keep this exercise working without a CDN or internet connection.
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <div class="modal fade" id="localModal" tabindex="-1" aria-labelledby="localModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-light border-secondary">
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title" id="localModalLabel">Local Modal</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="mb-2">This modal is powered by the locally loaded Bootstrap bundle.</p>
+          <div class="text-secondary small">It uses <code>data-bs-toggle</code> and <code>data-bs-target</code> attributes.</div>
+        </div>
+        <div class="modal-footer border-secondary">
+          <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="statusToast" class="toast text-bg-dark border border-secondary" role="status" aria-live="polite" aria-atomic="true">
+      <div class="toast-header bg-dark text-light border-secondary">
+        <strong class="me-auto">Bootstrap check</strong>
+        <small class="text-secondary">Now</small>
+        <button type="button" class="btn-close btn-close-white ms-2 mb-1" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div id="toastMessage" class="toast-body">Local Bootstrap plugins are ready.</div>
+    </div>
+  </div>
+
+  <script src="../../1/1.2/bootstrap.bundle.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

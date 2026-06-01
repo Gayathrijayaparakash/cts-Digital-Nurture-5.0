@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 9.2 - Bootstrap Button Groups and Toggles</title>
+
+  <link rel="stylesheet" href="../../1/1.2/bootstrap.min.css" />
+
+  <style>
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(13, 202, 240, 0.16), transparent 28rem),
+        linear-gradient(135deg, #101418 0%, #1b2533 50%, #111827 100%);
+    }
+
+    .page-shell {
+      max-width: 1120px;
+    }
+
+    .demo-card {
+      border-radius: 8px;
+      min-height: 100%;
+    }
+
+    .btn-group {
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body class="text-light">
+  <header class="border-bottom border-secondary-subtle py-4">
+    <div class="container page-shell">
+      <p class="text-info fw-semibold mb-1">Exercise 9.2</p>
+      <h1 class="display-6 fw-bold mb-2">Button Groups and Toggle Buttons</h1>
+      <p class="lead text-secondary mb-0">
+        Use <code>btn-group</code> for grouped actions and checkbox inputs for toggle buttons.
+      </p>
+    </div>
+  </header>
+
+  <main class="container page-shell py-4">
+    <div id="selectionAlert" class="alert alert-info border-info" role="status">
+      Selected toggles: None
+    </div>
+
+    <section class="row g-4">
+      <div class="col-12 col-lg-6">
+        <article class="demo-card card bg-body-tertiary border-secondary">
+          <div class="card-body p-4">
+            <h2 class="h4 mb-3">Basic button group</h2>
+            <div class="btn-group" role="group" aria-label="Basic action group">
+              <button class="btn btn-primary" type="button">Left</button>
+              <button class="btn btn-primary" type="button">Middle</button>
+              <button class="btn btn-primary" type="button">Right</button>
+            </div>
+            <p class="text-secondary small mb-0 mt-3">
+              These buttons sit together inside one <code>btn-group</code>.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-lg-6">
+        <article class="demo-card card bg-body-tertiary border-secondary">
+          <div class="card-body p-4">
+            <h2 class="h4 mb-3">Outlined button group</h2>
+            <div class="btn-group" role="group" aria-label="View mode group">
+              <button class="btn btn-outline-info active" type="button">List</button>
+              <button class="btn btn-outline-info" type="button">Grid</button>
+              <button class="btn btn-outline-info" type="button">Table</button>
+            </div>
+            <p class="text-secondary small mb-0 mt-3">
+              Button groups can use any contextual button style.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="card bg-body-tertiary border-secondary mt-4">
+      <div class="card-body p-4">
+        <h2 class="h4 mb-3">Checkbox toggle buttons</h2>
+        <p class="text-secondary">
+          Bootstrap toggle buttons use hidden checkbox inputs with matching labels styled as buttons.
+        </p>
+
+        <div class="btn-group d-flex flex-column flex-sm-row" role="group" aria-label="Checkbox toggle button group">
+          <input id="toggleHtml" class="btn-check" type="checkbox" autocomplete="off" value="HTML" />
+          <label class="btn btn-outline-primary" for="toggleHtml">HTML</label>
+
+          <input id="toggleCss" class="btn-check" type="checkbox" autocomplete="off" value="CSS" />
+          <label class="btn btn-outline-primary" for="toggleCss">CSS</label>
+
+          <input id="toggleBootstrap" class="btn-check" type="checkbox" autocomplete="off" value="Bootstrap" />
+          <label class="btn btn-outline-primary" for="toggleBootstrap">Bootstrap</label>
+
+          <input id="toggleJs" class="btn-check" type="checkbox" autocomplete="off" value="JavaScript" />
+          <label class="btn btn-outline-primary" for="toggleJs">JavaScript</label>
+        </div>
+      </div>
+    </section>
+
+    <section class="card bg-body-tertiary border-secondary mt-4">
+      <div class="card-body p-4">
+        <h2 class="h5 mb-3">Class summary</h2>
+        <div class="table-responsive">
+          <table class="table table-dark table-striped table-hover align-middle mb-0">
+            <thead>
+              <tr>
+                <th scope="col">Class</th>
+                <th scope="col">Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>btn-group</code></td>
+                <td>Groups related buttons into one connected control.</td>
+              </tr>
+              <tr>
+                <td><code>btn-check</code></td>
+                <td>Hides a checkbox or radio input while keeping it accessible.</td>
+              </tr>
+              <tr>
+                <td><code>btn btn-outline-primary</code></td>
+                <td>Styles the checkbox label as a toggle button.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>

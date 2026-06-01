@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 6.2 - Card Layout Flex Alignment</title>
+
+  <link rel="stylesheet" href="../../1/1.2/bootstrap.min.css" />
+
+  <style>
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 82% 12%, rgba(13, 202, 240, 0.16), transparent 28rem),
+        linear-gradient(135deg, #101418 0%, #1b2533 50%, #111827 100%);
+    }
+
+    .page-shell {
+      max-width: 1120px;
+    }
+
+    .demo-card {
+      border-radius: 8px;
+      min-height: 100%;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .demo-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(13, 202, 240, 0.62);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.22);
+    }
+
+    .avatar-mark {
+      width: 46px;
+      height: 46px;
+      flex: 0 0 46px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      background: rgba(13, 202, 240, 0.14);
+      border: 1px solid rgba(13, 202, 240, 0.34);
+    }
+
+    .metric-row {
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .layout-guide .flex-demo {
+      outline: 2px dashed rgba(13, 202, 240, 0.72);
+      outline-offset: 5px;
+    }
+  </style>
+</head>
+<body class="text-light">
+  <header class="border-bottom border-secondary-subtle py-4">
+    <div class="container page-shell">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+        <div>
+          <p class="text-info fw-semibold mb-1">Exercise 6.2</p>
+          <h1 class="h3 mb-2">Card Layout with Flex Alignment</h1>
+          <p class="text-secondary mb-0">
+            Use <code>justify-content-between</code> and <code>align-items-center</code> inside cards.
+          </p>
+        </div>
+        <span id="statusBadge" class="badge text-bg-info fs-6">Flex active</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="layoutDemo" class="container page-shell py-4">
+    <section class="card bg-body-tertiary border-secondary mb-4">
+      <div class="card-body p-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-12 col-lg-8">
+            <h2 class="h5 mb-1">Required classes</h2>
+            <p class="text-secondary mb-0">
+              Each card header and metric row uses <code>d-flex justify-content-between align-items-center</code>.
+            </p>
+          </div>
+          <div class="col-12 col-lg-4 text-lg-end">
+            <button id="guideButton" class="btn btn-outline-info" type="button" aria-pressed="false">
+              Show Flex Guides
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="row g-4" aria-label="Cards using justify-content-between and align-items-center">
+      <div class="col-12 col-lg-4">
+        <article class="card demo-card bg-body-tertiary border-secondary">
+          <div class="card-body p-4">
+            <div class="flex-demo d-flex justify-content-between align-items-center gap-3 mb-4">
+              <div class="d-flex align-items-center gap-3">
+                <div class="avatar-mark">A</div>
+                <div>
+                  <h2 class="h5 mb-0">Analytics</h2>
+                  <p class="text-secondary small mb-0">Weekly summary</p>
+                </div>
+              </div>
+              <span class="badge text-bg-success">Live</span>
+            </div>
+
+            <div class="flex-demo metric-row d-flex justify-content-between align-items-center p-3 mb-3">
+              <span class="text-secondary">Visitors</span>
+              <strong>12,480</strong>
+            </div>
+            <div class="flex-demo metric-row d-flex justify-content-between align-items-center p-3">
+              <span class="text-secondary">Growth</span>
+              <strong class="text-success">+18%</strong>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-lg-4">
+        <article class="card demo-card bg-body-tertiary border-secondary">
+          <div class="card-body p-4">
+            <div class="flex-demo d-flex justify-content-between align-items-center gap-3 mb-4">
+              <div class="d-flex align-items-center gap-3">
+                <div class="avatar-mark">T</div>
+                <div>
+                  <h2 class="h5 mb-0">Tasks</h2>
+                  <p class="text-secondary small mb-0">Project queue</p>
+                </div>
+              </div>
+              <button class="btn btn-sm btn-outline-info" type="button">View</button>
+            </div>
+
+            <div class="flex-demo metric-row d-flex justify-content-between align-items-center p-3 mb-3">
+              <span class="text-secondary">Completed</span>
+              <strong>24</strong>
+            </div>
+            <div class="flex-demo metric-row d-flex justify-content-between align-items-center p-3">
+              <span class="text-secondary">Pending</span>
+              <strong class="text-warning">7</strong>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-lg-4">
+        <article class="card demo-card bg-body-tertiary border-secondary">
+          <div class="card-body p-4">
+            <div class="flex-demo d-flex justify-content-between align-items-center gap-3 mb-4">
+              <div class="d-flex align-items-center gap-3">
+                <div class="avatar-mark">S</div>
+                <div>
+                  <h2 class="h5 mb-0">Storage</h2>
+                  <p class="text-secondary small mb-0">Account usage</p>
+                </div>
+              </div>
+              <span class="badge text-bg-primary">68%</span>
+            </div>
+
+            <div class="flex-demo metric-row d-flex justify-content-between align-items-center p-3 mb-3">
+              <span class="text-secondary">Used</span>
+              <strong>68 GB</strong>
+            </div>
+            <div class="flex-demo metric-row d-flex justify-content-between align-items-center p-3">
+              <span class="text-secondary">Available</span>
+              <strong class="text-info">32 GB</strong>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="card bg-body-tertiary border-secondary mt-4">
+      <div class="card-body p-4">
+        <h2 class="h5 mb-3">Class summary</h2>
+        <div class="table-responsive">
+          <table class="table table-dark table-striped table-hover align-middle mb-0">
+            <thead>
+              <tr>
+                <th scope="col">Class</th>
+                <th scope="col">Purpose in this card layout</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>d-flex</code></td>
+                <td>Turns the card header or metric row into a flex container.</td>
+              </tr>
+              <tr>
+                <td><code>justify-content-between</code></td>
+                <td>Pushes content to opposite sides of the row.</td>
+              </tr>
+              <tr>
+                <td><code>align-items-center</code></td>
+                <td>Vertically centers text, badges, icons, and buttons.</td>
+              </tr>
+              <tr>
+                <td><code>gap-3</code></td>
+                <td>Keeps spacing clean when items wrap or shrink.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>

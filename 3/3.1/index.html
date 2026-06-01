@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 3.1 - Responsive Bootstrap Columns</title>
+
+  <link rel="stylesheet" href="../../1/1.2/bootstrap.min.css" />
+
+  <style>
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 18% 8%, rgba(13, 202, 240, 0.2), transparent 28rem),
+        linear-gradient(135deg, #111827 0%, #172033 50%, #101418 100%);
+    }
+
+    .page-shell {
+      max-width: 1120px;
+    }
+
+    .demo-card {
+      min-height: 100%;
+      border-radius: 8px;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .demo-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(13, 202, 240, 0.55);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.22);
+    }
+
+    .number-mark {
+      width: 48px;
+      height: 48px;
+      flex: 0 0 48px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      background: rgba(13, 202, 240, 0.14);
+      border: 1px solid rgba(13, 202, 240, 0.35);
+    }
+
+    .layout-guide .demo-card {
+      outline: 2px dashed rgba(13, 202, 240, 0.6);
+      outline-offset: 4px;
+    }
+
+    .viewport-meter {
+      height: 0.75rem;
+      overflow: hidden;
+    }
+
+    .viewport-meter-bar {
+      width: 0;
+      transition: width 180ms ease;
+    }
+  </style>
+</head>
+<body class="text-light">
+  <header class="border-bottom border-secondary-subtle py-4">
+    <div class="container page-shell">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+        <div>
+          <p class="text-info fw-semibold mb-1">Exercise 3.1</p>
+          <h1 class="h3 mb-2">Responsive Three-Column Layout</h1>
+          <p class="text-secondary mb-0">
+            One column on mobile, two columns on tablets, and three columns on desktops.
+          </p>
+        </div>
+        <div class="text-lg-end">
+          <span id="breakpointBadge" class="badge text-bg-info fs-6">Checking...</span>
+          <div id="viewportText" class="text-secondary small mt-2">Viewport width: -- px</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page-shell py-4">
+    <section class="card bg-body-tertiary border-secondary mb-4">
+      <div class="card-body p-4">
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+          <div>
+            <h2 class="h5 mb-1">Grid classes used</h2>
+            <p class="text-secondary mb-0">
+              Each column uses <code>col-12 col-md-6 col-lg-4</code>.
+            </p>
+          </div>
+          <button id="guideButton" class="btn btn-outline-info btn-sm" type="button" aria-pressed="false">
+            Show Layout Guides
+          </button>
+        </div>
+
+        <div class="progress viewport-meter bg-dark border border-secondary mt-4" role="progressbar" aria-label="Viewport width meter">
+          <div id="viewportMeter" class="progress-bar viewport-meter-bar bg-info"></div>
+        </div>
+
+        <div class="row g-3 text-secondary small mt-3">
+          <div class="col-12 col-md-4">
+            <strong class="text-light">Mobile:</strong> stacked vertically with <code>col-12</code>
+          </div>
+          <div class="col-12 col-md-4">
+            <strong class="text-light">Tablet:</strong> two per row with <code>col-md-6</code>
+          </div>
+          <div class="col-12 col-md-4">
+            <strong class="text-light">Desktop:</strong> three per row with <code>col-lg-4</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="responsiveGrid" class="row g-4" aria-label="Responsive column demo">
+      <div class="col-12 col-md-6 col-lg-4">
+        <article class="card demo-card bg-body-tertiary border-secondary">
+          <div class="card-body p-4">
+            <div class="d-flex gap-3 align-items-start mb-3">
+              <div class="number-mark">1</div>
+              <div>
+                <h2 class="h5 mb-1">Plan</h2>
+                <p class="text-secondary small mb-0">First responsive column</p>
+              </div>
+            </div>
+            <p class="mb-3">
+              This card takes the full row on small screens, half the row on tablets, and one-third on desktop screens.
+            </p>
+            <span class="badge text-bg-info">col-12</span>
+            <span class="badge text-bg-secondary">col-md-6</span>
+            <span class="badge text-bg-success">col-lg-4</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <article class="card demo-card bg-body-tertiary border-secondary">
+          <div class="card-body p-4">
+            <div class="d-flex gap-3 align-items-start mb-3">
+              <div class="number-mark">2</div>
+              <div>
+                <h2 class="h5 mb-1">Build</h2>
+                <p class="text-secondary small mb-0">Second responsive column</p>
+              </div>
+            </div>
+            <p class="mb-3">
+              Bootstrap's grid is based on 12 columns. A desktop width of <code>col-lg-4</code> means each item uses 4 of 12 columns.
+            </p>
+            <span class="badge text-bg-info">12/12 mobile</span>
+            <span class="badge text-bg-secondary">6/12 tablet</span>
+            <span class="badge text-bg-success">4/12 desktop</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <article class="card demo-card bg-body-tertiary border-secondary">
+          <div class="card-body p-4">
+            <div class="d-flex gap-3 align-items-start mb-3">
+              <div class="number-mark">3</div>
+              <div>
+                <h2 class="h5 mb-1">Review</h2>
+                <p class="text-secondary small mb-0">Third responsive column</p>
+              </div>
+            </div>
+            <p class="mb-3">
+              Resize the browser to watch this card move from a new row on tablets into the same row on desktops.
+            </p>
+            <span class="badge text-bg-info">Stacked</span>
+            <span class="badge text-bg-secondary">Two-per-row</span>
+            <span class="badge text-bg-success">Three-per-row</span>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>

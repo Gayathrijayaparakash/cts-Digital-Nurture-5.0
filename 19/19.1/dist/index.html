@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Exercise 19.1 | Bootstrap 5 Sass</title>
+    <link rel="stylesheet" crossorigin href="/assets/index-IoAnvXsp.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+      <div class="container">
+        <a class="navbar-brand fw-semibold" href="#">Bootstrap Sass</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle btn btn-link" data-bs-toggle="dropdown" aria-expanded="false">Components</button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Sass setup</a></li>
+                <li><a class="dropdown-item" href="#">Bootstrap JS</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container py-5">
+      <section class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <p class="text-uppercase text-primary fw-bold small mb-2">Exercise 19.1</p>
+          <h1 class="display-5 fw-bold">Bootstrap 5 with Sass and npm</h1>
+          <p class="lead text-secondary">
+            This project imports Bootstrap from npm, compiles custom Sass, and loads Bootstrap's JavaScript bundle through Vite.
+          </p>
+          <div class="d-flex flex-wrap gap-2">
+            <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#setupModal">Open modal</button>
+            <a class="btn btn-outline-primary btn-lg" href="https://getbootstrap.com/docs/5.3/customize/sass/" target="_blank" rel="noreferrer">Sass docs</a>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+              <h2 class="h4">Project scripts</h2>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item px-0"><code>npm run dev</code> starts Vite.</li>
+                <li class="list-group-item px-0"><code>npm run build</code> compiles production assets.</li>
+                <li class="list-group-item px-0"><code>src/scss/styles.scss</code> customizes Bootstrap.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal fade" id="setupModal" tabindex="-1" aria-labelledby="setupModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5" id="setupModalLabel">Bootstrap JavaScript is active</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            The modal and dropdown are powered by Bootstrap's bundled JavaScript imported from npm.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
