@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 11.2 - Bootstrap Media Object Layout</title>
+
+  <link rel="stylesheet" href="../../1/1.2/bootstrap.min.css" />
+
+  <style>
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(25, 135, 84, 0.18), transparent 28rem),
+        linear-gradient(135deg, #101418 0%, #1b2533 50%, #111827 100%);
+    }
+
+    .page-shell {
+      max-width: 1040px;
+    }
+
+    .media-card {
+      border-radius: 8px;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .media-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(25, 135, 84, 0.62);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.22);
+    }
+
+    .media-image {
+      width: 112px;
+      height: 112px;
+      flex: 0 0 112px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .layout-guide .media-object {
+      outline: 2px dashed rgba(25, 135, 84, 0.7);
+      outline-offset: 6px;
+    }
+  </style>
+</head>
+<body class="text-light">
+  <header class="border-bottom border-secondary-subtle py-4">
+    <div class="container page-shell">
+      <p class="text-success fw-semibold mb-1">Exercise 11.2</p>
+      <h1 class="display-6 fw-bold mb-2">Media Object Layout</h1>
+      <p class="lead text-secondary mb-0">
+        Align an image to the left of content using Bootstrap flex utilities.
+      </p>
+    </div>
+  </header>
+
+  <main id="layoutDemo" class="container page-shell py-4">
+    <section class="card bg-body-tertiary border-secondary mb-4">
+      <div class="card-body p-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-12 col-lg-8">
+            <h2 class="h5 mb-1">Bootstrap 5 media object pattern</h2>
+            <p class="text-secondary mb-0">
+              The older <code>media</code> component was removed in Bootstrap 5, so this layout uses
+              <code>d-flex</code>, <code>flex-column</code>, <code>flex-md-row</code>, and <code>align-items-start</code>.
+            </p>
+          </div>
+          <div class="col-12 col-lg-4 text-lg-end">
+            <button id="guideButton" class="btn btn-outline-success" type="button" aria-pressed="false">
+              Show Layout Guide
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="vstack gap-4" aria-label="Media object examples">
+      <article class="media-card bg-body-tertiary border border-secondary p-4">
+        <div class="media-object d-flex flex-column flex-md-row align-items-start gap-4">
+          <img
+            class="media-image"
+            alt="Profile avatar for Priya"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Crect width='240' height='240' fill='%23111827'/%3E%3Ccircle cx='120' cy='104' r='46' fill='%23198754'/%3E%3Cpath d='M52 214c17-64 119-64 136 0' fill='%230dcaf0' opacity='.85'/%3E%3Ccircle cx='190' cy='48' r='40' fill='%230d6efd' opacity='.55'/%3E%3C/svg%3E"
+          />
+          <div>
+            <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+              <h2 class="h4 mb-0">Priya Mehta</h2>
+              <span class="badge text-bg-success">Online</span>
+            </div>
+            <p class="text-secondary mb-3">
+              This is a media object: the image stays to the left while the text content sits to the right on medium screens and larger.
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge text-bg-primary">d-flex</span>
+              <span class="badge text-bg-info">flex-md-row</span>
+              <span class="badge text-bg-success">align-items-start</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="media-card bg-body-tertiary border border-secondary p-4">
+        <div class="media-object d-flex flex-column flex-md-row align-items-start gap-4">
+          <img
+            class="media-image"
+            alt="Article thumbnail"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop stop-color='%23ffc107'/%3E%3Cstop offset='1' stop-color='%23dc3545'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='240' height='240' fill='%23111827'/%3E%3Crect x='40' y='54' width='160' height='132' rx='18' fill='url(%23g)'/%3E%3Crect x='66' y='84' width='108' height='12' rx='6' fill='%23fff' opacity='.75'/%3E%3Crect x='66' y='116' width='82' height='12' rx='6' fill='%23fff' opacity='.55'/%3E%3C/svg%3E"
+          />
+          <div>
+            <h2 class="h4 mb-2">Responsive Article Preview</h2>
+            <p class="text-secondary mb-3">
+              Media object layouts are useful for comments, profile rows, article previews, notifications, and list items with thumbnails.
+            </p>
+            <button class="btn btn-outline-success" type="button">Read More</button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="card bg-body-tertiary border-secondary mt-4">
+      <div class="card-body p-4">
+        <h2 class="h5 mb-3">Class summary</h2>
+        <div class="table-responsive">
+          <table class="table table-dark table-striped table-hover align-middle mb-0">
+            <thead>
+              <tr>
+                <th scope="col">Class</th>
+                <th scope="col">Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>d-flex</code></td>
+                <td>Creates the media object row.</td>
+              </tr>
+              <tr>
+                <td><code>flex-column flex-md-row</code></td>
+                <td>Stacks on mobile and places image left/content right from medium screens.</td>
+              </tr>
+              <tr>
+                <td><code>align-items-start</code></td>
+                <td>Aligns the image and content at the top.</td>
+              </tr>
+              <tr>
+                <td><code>gap-4</code></td>
+                <td>Adds spacing between the image and content.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>

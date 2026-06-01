@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 18.1 - Bootstrap Modal</title>
+
+  <link rel="stylesheet" href="../../1/1.2/bootstrap.min.css" />
+
+  <style>
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 18% 14%, rgba(13, 110, 253, 0.18), transparent 24rem),
+        radial-gradient(circle at 82% 16%, rgba(13, 202, 240, 0.14), transparent 22rem),
+        linear-gradient(135deg, #101418 0%, #182233 55%, #111827 100%);
+    }
+
+    .page-shell {
+      max-width: 960px;
+    }
+
+    .demo-panel,
+    .info-panel {
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body class="text-light">
+  <main class="container page-shell py-5">
+    <section class="demo-panel bg-body-tertiary border border-secondary shadow-lg p-4 p-md-5 mb-4">
+      <p class="text-info fw-semibold mb-2">Exercise 18.1</p>
+      <h1 class="display-6 fw-bold mb-3">Modal Popup</h1>
+      <p class="lead text-secondary mb-4">
+        Click the button to open a Bootstrap modal popup powered by Bootstrap JavaScript.
+      </p>
+
+      <div class="d-flex flex-column flex-sm-row gap-3">
+        <button class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#demoModal">
+          Open Modal
+        </button>
+        <button class="btn btn-outline-light" type="button" id="openModalWithJs">
+          Open With JS
+        </button>
+      </div>
+    </section>
+
+    <section class="row g-4">
+      <div class="col-12 col-md-6">
+        <article class="info-panel bg-body-tertiary border border-secondary p-4 h-100">
+          <h2 class="h5 mb-3">Data Attributes</h2>
+          <p class="text-secondary mb-0">
+            The first button uses <code>data-bs-toggle="modal"</code> and <code>data-bs-target="#demoModal"</code>.
+          </p>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <article class="info-panel bg-primary-subtle text-primary-emphasis border border-primary-subtle p-4 h-100">
+          <h2 class="h5 mb-3">JavaScript API</h2>
+          <p class="mb-0">
+            The second button opens the same modal from <code>script.js</code>.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal fade" id="demoModal" tabindex="-1" aria-labelledby="demoModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark border-secondary">
+        <div class="modal-header border-secondary">
+          <h2 class="modal-title h5" id="demoModalTitle">Bootstrap Modal Popup</h2>
+          <button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-secondary mb-3">
+            This popup is created with Bootstrap's modal component and opened by a button.
+          </p>
+          <div class="alert alert-info mb-0" role="status" id="modalStatus">
+            Modal is ready.
+          </div>
+        </div>
+        <div class="modal-footer border-secondary">
+          <button class="btn btn-outline-light" type="button" data-bs-dismiss="modal">Cancel</button>
+          <button class="btn btn-info" type="button" data-bs-dismiss="modal">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../1/1.2/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

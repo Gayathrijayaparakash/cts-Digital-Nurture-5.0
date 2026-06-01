@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 8.1 - Bootstrap Registration Form</title>
+
+  <link rel="stylesheet" href="../../1/1.2/bootstrap.min.css" />
+
+  <style>
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(25, 135, 84, 0.18), transparent 28rem),
+        linear-gradient(135deg, #101418 0%, #1b2533 50%, #111827 100%);
+    }
+
+    .page-shell {
+      max-width: 1120px;
+    }
+
+    .form-panel,
+    .info-panel {
+      border-radius: 8px;
+    }
+
+    .step-mark {
+      width: 44px;
+      height: 44px;
+      flex: 0 0 44px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      background: rgba(25, 135, 84, 0.14);
+      border: 1px solid rgba(25, 135, 84, 0.34);
+    }
+
+    .password-meter {
+      height: 0.5rem;
+    }
+  </style>
+</head>
+<body class="text-light">
+  <header class="border-bottom border-secondary-subtle py-4">
+    <div class="container page-shell">
+      <p class="text-success fw-semibold mb-1">Exercise 8.1</p>
+      <h1 class="display-6 fw-bold mb-2">Bootstrap Registration Form</h1>
+      <p class="lead text-secondary mb-0">
+        A sample form using <code>form-control</code>, <code>form-check</code>, and <code>input-group</code>.
+      </p>
+    </div>
+  </header>
+
+  <main class="container page-shell py-4">
+    <div id="successAlert" class="alert alert-success border-success d-none" role="status"></div>
+
+    <div class="row g-4">
+      <div class="col-12 col-lg-8">
+        <section class="form-panel card bg-body-tertiary border-secondary">
+          <div class="card-body p-4">
+            <div class="d-flex gap-3 align-items-start mb-4">
+              <div class="step-mark">1</div>
+              <div>
+                <h2 class="h4 mb-1">Create your account</h2>
+                <p class="text-secondary mb-0">Complete the fields below to register.</p>
+              </div>
+            </div>
+
+            <form id="registrationForm" class="needs-validation" novalidate>
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <label for="firstName" class="form-label">First name</label>
+                  <input id="firstName" name="firstName" class="form-control bg-dark text-light border-secondary" type="text" placeholder="Aarav" required />
+                  <div class="invalid-feedback">Please enter your first name.</div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label for="lastName" class="form-label">Last name</label>
+                  <input id="lastName" name="lastName" class="form-control bg-dark text-light border-secondary" type="text" placeholder="Sharma" required />
+                  <div class="invalid-feedback">Please enter your last name.</div>
+                </div>
+
+                <div class="col-12">
+                  <label for="email" class="form-label">Email address</label>
+                  <div class="input-group has-validation">
+                    <span class="input-group-text bg-dark text-secondary border-secondary">@</span>
+                    <input id="email" name="email" class="form-control bg-dark text-light border-secondary" type="email" placeholder="name@example.com" required />
+                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label for="username" class="form-label">Username</label>
+                  <div class="input-group has-validation">
+                    <span class="input-group-text bg-dark text-secondary border-secondary">user</span>
+                    <input id="username" name="username" class="form-control bg-dark text-light border-secondary" type="text" placeholder="bootstrap_fan" minlength="4" required />
+                    <div class="invalid-feedback">Choose a username with at least 4 characters.</div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label for="password" class="form-label">Password</label>
+                  <div class="input-group has-validation">
+                    <input id="password" name="password" class="form-control bg-dark text-light border-secondary" type="password" placeholder="Create a password" minlength="8" required />
+                    <button id="togglePassword" class="btn btn-outline-secondary" type="button">Show</button>
+                    <div class="invalid-feedback">Password must be at least 8 characters.</div>
+                  </div>
+                  <div class="progress password-meter bg-dark border border-secondary mt-2" aria-hidden="true">
+                    <div id="passwordStrength" class="progress-bar bg-danger" style="width: 0%"></div>
+                  </div>
+                  <div id="passwordHint" class="form-text text-secondary">Use at least 8 characters.</div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label for="plan" class="form-label">Plan</label>
+                  <select id="plan" name="plan" class="form-select bg-dark text-light border-secondary" required>
+                    <option value="">Choose a plan</option>
+                    <option>Student</option>
+                    <option>Professional</option>
+                    <option>Team</option>
+                  </select>
+                  <div class="invalid-feedback">Please select a plan.</div>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label d-block">Learning preference</label>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input id="videos" class="form-check-input" type="checkbox" value="Videos" checked />
+                      <label class="form-check-label" for="videos">Videos</label>
+                    </div>
+                    <div class="form-check">
+                      <input id="articles" class="form-check-input" type="checkbox" value="Articles" />
+                      <label class="form-check-label" for="articles">Articles</label>
+                    </div>
+                    <div class="form-check">
+                      <input id="projects" class="form-check-input" type="checkbox" value="Projects" />
+                      <label class="form-check-label" for="projects">Projects</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label d-block">Account type</label>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input id="personal" name="accountType" class="form-check-input" type="radio" value="Personal" checked />
+                      <label class="form-check-label" for="personal">Personal</label>
+                    </div>
+                    <div class="form-check">
+                      <input id="business" name="accountType" class="form-check-input" type="radio" value="Business" />
+                      <label class="form-check-label" for="business">Business</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-check">
+                    <input id="terms" class="form-check-input" type="checkbox" required />
+                    <label class="form-check-label" for="terms">
+                      I agree to the terms and privacy policy.
+                    </label>
+                    <div class="invalid-feedback">You must agree before registering.</div>
+                  </div>
+                </div>
+
+                <div class="col-12 d-flex flex-column flex-sm-row gap-2">
+                  <button class="btn btn-success" type="submit">Create Account</button>
+                  <button id="resetButton" class="btn btn-outline-light" type="reset">Reset Form</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+
+      <div class="col-12 col-lg-4">
+        <aside class="info-panel bg-body-tertiary border border-secondary p-4 h-100">
+          <h2 class="h5 mb-3">Bootstrap components used</h2>
+          <div class="vstack gap-3">
+            <div>
+              <div class="fw-semibold"><code>form-control</code></div>
+              <p class="text-secondary small mb-0">Styles text, email, and password inputs.</p>
+            </div>
+            <div>
+              <div class="fw-semibold"><code>input-group</code></div>
+              <p class="text-secondary small mb-0">Combines addons, inputs, and buttons in one control.</p>
+            </div>
+            <div>
+              <div class="fw-semibold"><code>form-check</code></div>
+              <p class="text-secondary small mb-0">Styles checkboxes and radio buttons.</p>
+            </div>
+            <div>
+              <div class="fw-semibold"><code>form-select</code></div>
+              <p class="text-secondary small mb-0">Styles the plan dropdown.</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>

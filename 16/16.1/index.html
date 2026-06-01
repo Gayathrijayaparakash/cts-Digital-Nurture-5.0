@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 16.1 - Fixed Footer</title>
+
+  <link rel="stylesheet" href="../../1/1.2/bootstrap.min.css" />
+
+  <style>
+    body {
+      min-height: 100vh;
+      padding-bottom: 5.5rem;
+      background:
+        radial-gradient(circle at 18% 14%, rgba(13, 202, 240, 0.16), transparent 24rem),
+        radial-gradient(circle at 86% 18%, rgba(13, 110, 253, 0.16), transparent 22rem),
+        linear-gradient(135deg, #101418 0%, #182233 55%, #111827 100%);
+    }
+
+    .page-shell {
+      max-width: 1040px;
+    }
+
+    .demo-panel,
+    .feature-panel {
+      border-radius: 8px;
+    }
+
+    .fixed-footer {
+      z-index: 1030;
+      transition: transform 0.25s ease;
+    }
+
+    .fixed-footer.is-hidden {
+      transform: translateY(100%);
+    }
+
+    .footer-action {
+      min-width: 8.5rem;
+    }
+  </style>
+</head>
+<body class="text-light">
+  <main class="container page-shell py-5">
+    <section class="demo-panel bg-body-tertiary border border-secondary shadow p-4 p-md-5 mb-4">
+      <p class="text-info fw-semibold mb-2">Exercise 16.1</p>
+      <h1 class="display-6 fw-bold mb-3">Fixed Footer</h1>
+      <p class="lead text-secondary mb-4">
+        This page uses Bootstrap position utilities to keep the footer fixed to the bottom of the viewport.
+      </p>
+
+      <div class="d-flex flex-wrap gap-2">
+        <span class="badge text-bg-primary">position-fixed</span>
+        <span class="badge text-bg-primary">bottom-0</span>
+        <span class="badge text-bg-secondary">start-0</span>
+        <span class="badge text-bg-secondary">end-0</span>
+      </div>
+
+      <div class="mt-4 d-flex flex-column flex-sm-row gap-2">
+        <button class="btn btn-info footer-action" type="button" id="toggleFooterBtn">
+          Hide Footer
+        </button>
+        <button class="btn btn-outline-light footer-action" type="button" id="scrollBottomBtn">
+          Scroll Down
+        </button>
+      </div>
+    </section>
+
+    <section class="row g-4" aria-label="Fixed footer details">
+      <div class="col-12 col-md-6">
+        <article class="feature-panel bg-body-tertiary border border-secondary p-4 h-100">
+          <h2 class="h5 mb-3">Always Visible</h2>
+          <p class="text-secondary mb-0">
+            The footer stays attached to the bottom of the browser window even while the page content scrolls.
+          </p>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <article class="feature-panel bg-primary-subtle text-primary-emphasis border border-primary-subtle p-4 h-100">
+          <h2 class="h5 mb-3">Content Padding</h2>
+          <p class="mb-0">
+            The body has bottom padding so the fixed footer does not cover the last section.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="mt-4">
+      <div class="row g-4">
+        <div class="col-12 col-lg-4">
+          <article class="feature-panel bg-success-subtle text-success-emphasis border border-success-subtle p-4 h-100">
+            <h2 class="h5 mb-3">Step One</h2>
+            <p class="mb-0">Add <code>position-fixed</code> to remove the footer from normal document flow.</p>
+          </article>
+        </div>
+
+        <div class="col-12 col-lg-4">
+          <article class="feature-panel bg-warning-subtle text-warning-emphasis border border-warning-subtle p-4 h-100">
+            <h2 class="h5 mb-3">Step Two</h2>
+            <p class="mb-0">Add <code>bottom-0</code> to anchor the footer to the bottom edge.</p>
+          </article>
+        </div>
+
+        <div class="col-12 col-lg-4">
+          <article class="feature-panel bg-info-subtle text-info-emphasis border border-info-subtle p-4 h-100">
+            <h2 class="h5 mb-3">Step Three</h2>
+            <p class="mb-0">Add <code>start-0 end-0</code> so it stretches across the viewport.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="fixed-footer position-fixed bottom-0 start-0 end-0 bg-dark border-top border-secondary shadow-lg" id="fixedFooter">
+    <div class="container page-shell py-3">
+      <div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-2">
+        <p class="mb-0 fw-semibold">Fixed Footer Demo</p>
+        <p class="mb-0 text-secondary">
+          <span id="footerStatus">Pinned to bottom</span> with <code>position-fixed bottom-0</code>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../1/1.2/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

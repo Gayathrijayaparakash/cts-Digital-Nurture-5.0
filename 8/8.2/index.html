@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 8.2 - Bootstrap Floating Login Form</title>
+
+  <link rel="stylesheet" href="../../1/1.2/bootstrap.min.css" />
+
+  <style>
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(13, 110, 253, 0.18), transparent 28rem),
+        linear-gradient(135deg, #101418 0%, #1b2533 50%, #111827 100%);
+    }
+
+    .page-shell {
+      max-width: 1040px;
+    }
+
+    .login-card,
+    .info-card {
+      border-radius: 8px;
+    }
+
+    .brand-mark {
+      width: 52px;
+      height: 52px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      background: rgba(13, 110, 253, 0.16);
+      border: 1px solid rgba(13, 110, 253, 0.36);
+    }
+
+    .form-floating > .form-control {
+      background-color: var(--bs-dark);
+      color: var(--bs-light);
+      border-color: var(--bs-secondary);
+    }
+
+    .form-floating > label {
+      color: var(--bs-secondary-color);
+    }
+
+    .password-toggle {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      z-index: 4;
+    }
+  </style>
+</head>
+<body class="text-light">
+  <header class="border-bottom border-secondary-subtle py-4">
+    <div class="container page-shell">
+      <p class="text-primary fw-semibold mb-1">Exercise 8.2</p>
+      <h1 class="display-6 fw-bold mb-2">Login Form with Floating Labels</h1>
+      <p class="lead text-secondary mb-0">
+        Style a login form using Bootstrap's <code>form-floating</code> component.
+      </p>
+    </div>
+  </header>
+
+  <main class="container page-shell py-4">
+    <div id="loginAlert" class="alert alert-success border-success d-none" role="status"></div>
+
+    <div class="row g-4 align-items-stretch">
+      <div class="col-12 col-lg-7">
+        <section class="login-card card bg-body-tertiary border-secondary h-100">
+          <div class="card-body p-4 p-md-5">
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <div class="brand-mark">L</div>
+              <div>
+                <h2 class="h3 mb-1">Welcome back</h2>
+                <p class="text-secondary mb-0">Sign in with your email and password.</p>
+              </div>
+            </div>
+
+            <form id="loginForm" class="needs-validation" novalidate>
+              <div class="form-floating mb-3">
+                <input id="email" name="email" class="form-control" type="email" placeholder="name@example.com" required />
+                <label for="email">Email address</label>
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+              </div>
+
+              <div class="form-floating mb-3 position-relative">
+                <input id="password" name="password" class="form-control pe-5" type="password" placeholder="Password" minlength="6" required />
+                <label for="password">Password</label>
+                <button id="togglePassword" class="btn btn-sm btn-outline-secondary password-toggle" type="button">Show</button>
+                <div class="invalid-feedback">Password must be at least 6 characters.</div>
+              </div>
+
+              <div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-3 mb-4">
+                <div class="form-check">
+                  <input id="rememberMe" class="form-check-input" type="checkbox" />
+                  <label class="form-check-label" for="rememberMe">Remember me</label>
+                </div>
+                <a class="link-info text-decoration-none" href="#">Forgot password?</a>
+              </div>
+
+              <div class="d-grid gap-2">
+                <button class="btn btn-primary btn-lg" type="submit">Login</button>
+                <button class="btn btn-outline-light" type="reset">Clear</button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+
+      <div class="col-12 col-lg-5">
+        <aside class="info-card bg-body-tertiary border border-secondary p-4 h-100">
+          <h2 class="h5 mb-3">What <code>form-floating</code> does</h2>
+          <p class="text-secondary">
+            Floating labels place the label inside the input area. When the user types or focuses the input, the label moves upward.
+          </p>
+
+          <div class="vstack gap-3">
+            <div class="p-3 bg-dark border border-secondary rounded-2">
+              <div class="fw-semibold">Required structure</div>
+              <code>&lt;div class="form-floating"&gt;</code>
+            </div>
+            <div class="p-3 bg-dark border border-secondary rounded-2">
+              <div class="fw-semibold">Input class</div>
+              <code>form-control</code>
+            </div>
+            <div class="p-3 bg-dark border border-secondary rounded-2">
+              <div class="fw-semibold">Important detail</div>
+              <p class="text-secondary small mb-0">The input needs a placeholder, even when a visible label is used.</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>

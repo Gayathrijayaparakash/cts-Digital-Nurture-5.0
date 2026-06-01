@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 17.2 - Icon Only Buttons</title>
+
+  <link rel="stylesheet" href="../../1/1.2/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <style>
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 18% 14%, rgba(13, 110, 253, 0.18), transparent 24rem),
+        radial-gradient(circle at 82% 18%, rgba(25, 135, 84, 0.16), transparent 22rem),
+        linear-gradient(135deg, #101418 0%, #182233 55%, #111827 100%);
+    }
+
+    .page-shell {
+      max-width: 1040px;
+    }
+
+    .demo-panel,
+    .toolbar-panel,
+    .preview-panel {
+      border-radius: 8px;
+    }
+
+    .icon-btn {
+      width: 3rem;
+      height: 3rem;
+      flex: 0 0 auto;
+    }
+  </style>
+</head>
+<body class="text-light">
+  <main class="container page-shell py-5">
+    <section class="demo-panel bg-body-tertiary border border-secondary shadow-lg p-4 p-md-5 mb-4">
+      <p class="text-info fw-semibold mb-2">Exercise 17.2</p>
+      <h1 class="display-6 fw-bold mb-3">Icon-Only Buttons</h1>
+      <p class="lead text-secondary mb-4">
+        Text buttons are replaced with compact icon-only buttons using Bootstrap Icons. Accessible labels and tooltips keep each action clear.
+      </p>
+
+      <div class="d-flex flex-wrap gap-2">
+        <span class="badge text-bg-primary">bi-pencil-square</span>
+        <span class="badge text-bg-primary">bi-trash3</span>
+        <span class="badge text-bg-primary">bi-share</span>
+        <span class="badge text-bg-primary">bi-download</span>
+      </div>
+    </section>
+
+    <section class="row g-4 align-items-stretch">
+      <div class="col-12 col-lg-5">
+        <article class="toolbar-panel bg-body-tertiary border border-secondary shadow p-4 h-100">
+          <h2 class="h5 mb-3">Action Toolbar</h2>
+          <div class="d-flex flex-wrap gap-2" role="toolbar" aria-label="Document actions">
+            <button class="icon-btn btn btn-outline-info rounded-circle d-inline-flex align-items-center justify-content-center" type="button" aria-label="Edit" data-action="Edit" data-bs-toggle="tooltip" data-bs-title="Edit">
+              <i class="bi bi-pencil-square fs-5" aria-hidden="true"></i>
+            </button>
+            <button class="icon-btn btn btn-outline-success rounded-circle d-inline-flex align-items-center justify-content-center" type="button" aria-label="Save" data-action="Save" data-bs-toggle="tooltip" data-bs-title="Save">
+              <i class="bi bi-check2-circle fs-5" aria-hidden="true"></i>
+            </button>
+            <button class="icon-btn btn btn-outline-warning rounded-circle d-inline-flex align-items-center justify-content-center" type="button" aria-label="Share" data-action="Share" data-bs-toggle="tooltip" data-bs-title="Share">
+              <i class="bi bi-share fs-5" aria-hidden="true"></i>
+            </button>
+            <button class="icon-btn btn btn-outline-primary rounded-circle d-inline-flex align-items-center justify-content-center" type="button" aria-label="Download" data-action="Download" data-bs-toggle="tooltip" data-bs-title="Download">
+              <i class="bi bi-download fs-5" aria-hidden="true"></i>
+            </button>
+            <button class="icon-btn btn btn-outline-danger rounded-circle d-inline-flex align-items-center justify-content-center" type="button" aria-label="Delete" data-action="Delete" data-bs-toggle="tooltip" data-bs-title="Delete">
+              <i class="bi bi-trash3 fs-5" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <div class="alert alert-info mt-4 mb-0" role="status" id="actionStatus">
+            Choose an icon button.
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-lg-7">
+        <article class="preview-panel bg-dark border border-secondary shadow-lg p-4 h-100">
+          <div class="d-flex align-items-start justify-content-between gap-3 mb-4">
+            <div>
+              <h2 class="h5 mb-2">Document Preview</h2>
+              <p class="text-secondary mb-0">The top-right actions are icon-only buttons.</p>
+            </div>
+
+            <div class="d-flex gap-2">
+              <button class="icon-btn btn btn-light rounded-circle d-inline-flex align-items-center justify-content-center" type="button" aria-label="Favorite" data-action="Favorite" data-bs-toggle="tooltip" data-bs-title="Favorite">
+                <i class="bi bi-star fs-5" aria-hidden="true"></i>
+              </button>
+              <button class="icon-btn btn btn-info rounded-circle d-inline-flex align-items-center justify-content-center" type="button" aria-label="Open menu" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-three-dots fs-5" aria-hidden="true"></i>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><button class="dropdown-item" type="button" data-action="Duplicate">Duplicate</button></li>
+                <li><button class="dropdown-item" type="button" data-action="Archive">Archive</button></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-body-tertiary border border-secondary rounded-2 p-4">
+            <p class="text-info fw-semibold mb-2">Quarterly Report</p>
+            <h3 class="h4 mb-3">Interface cleanup</h3>
+            <p class="text-secondary mb-0">
+              Icon-only controls save space while still providing clear meaning through icons, labels, and Bootstrap tooltips.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div class="toast text-bg-dark border border-secondary" id="actionToast" role="status" aria-live="polite" aria-atomic="true">
+      <div class="toast-header">
+        <i class="bi bi-ui-checks text-primary me-2" aria-hidden="true"></i>
+        <strong class="me-auto">Button Action</strong>
+        <button class="btn-close" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body" id="toastMessage">
+        Action selected.
+      </div>
+    </div>
+  </div>
+
+  <script src="../../1/1.2/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

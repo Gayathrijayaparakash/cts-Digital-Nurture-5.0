@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 2.1 - Bootstrap Directory Structure</title>
+
+  <link rel="stylesheet" href="../../1/1.2/bootstrap.min.css" />
+
+  <style>
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #111827 0%, #18212f 48%, #101418 100%);
+    }
+
+    .page-shell {
+      max-width: 1080px;
+    }
+
+    .folder-mark {
+      width: 48px;
+      height: 48px;
+      flex: 0 0 48px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      background: rgba(13, 202, 240, 0.12);
+      border: 1px solid rgba(13, 202, 240, 0.28);
+    }
+
+    .path-text {
+      word-break: break-word;
+    }
+  </style>
+</head>
+<body class="text-light">
+  <header class="border-bottom border-secondary-subtle py-4">
+    <div class="container page-shell">
+      <p class="text-info fw-semibold mb-1">Exercise 2.1</p>
+      <h1 class="h3 mb-2">Explore the Bootstrap Directory Structure</h1>
+      <p class="text-secondary mb-0">
+        This page explains the purpose of the CSS, JS, and icons folders found in a Bootstrap download.
+      </p>
+    </div>
+  </header>
+
+  <main class="container page-shell py-4">
+    <section class="card bg-body-tertiary border-secondary mb-4">
+      <div class="card-body p-4">
+        <h2 class="h5 mb-3">Local files used in this project</h2>
+        <div class="row g-3">
+          <div class="col-12 col-md-6">
+            <div class="p-3 rounded-2 bg-dark border border-secondary h-100">
+              <div class="fw-semibold">Bootstrap CSS</div>
+              <code class="path-text d-block mt-1">../../1/1.2/bootstrap.min.css</code>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="p-3 rounded-2 bg-dark border border-secondary h-100">
+              <div class="fw-semibold">Bootstrap JS Bundle</div>
+              <code class="path-text d-block mt-1">../../1/1.2/bootstrap.bundle.min.js</code>
+            </div>
+          </div>
+        </div>
+        <p class="text-secondary small mb-0 mt-3">
+          Note: This simplified local download contains compiled CSS and JS files. A separate icons folder is not required for Bootstrap components to work.
+        </p>
+      </div>
+    </section>
+
+    <section class="row g-4">
+      <div class="col-12 col-lg-4">
+        <article class="card bg-body-tertiary border-secondary h-100">
+          <div class="card-body p-4">
+            <div class="d-flex gap-3 align-items-start mb-3">
+              <div class="folder-mark">CSS</div>
+              <div>
+                <h2 class="h5 mb-1">CSS Folder</h2>
+                <p class="text-secondary small mb-0">Controls the visual design of Bootstrap pages.</p>
+              </div>
+            </div>
+            <p class="mb-2">
+              The CSS folder contains compiled stylesheet files such as <code>bootstrap.css</code> and <code>bootstrap.min.css</code>.
+            </p>
+            <p class="text-secondary mb-0">
+              These files provide Bootstrap's grid system, spacing utilities, colors, typography, buttons, cards, forms, navbars, alerts, and responsive layout rules.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-lg-4">
+        <article class="card bg-body-tertiary border-secondary h-100">
+          <div class="card-body p-4">
+            <div class="d-flex gap-3 align-items-start mb-3">
+              <div class="folder-mark">JS</div>
+              <div>
+                <h2 class="h5 mb-1">JS Folder</h2>
+                <p class="text-secondary small mb-0">Adds behavior to interactive components.</p>
+              </div>
+            </div>
+            <p class="mb-2">
+              The JS folder contains JavaScript files such as <code>bootstrap.js</code>, <code>bootstrap.min.js</code>, and <code>bootstrap.bundle.min.js</code>.
+            </p>
+            <p class="text-secondary mb-0">
+              These files power components like modals, dropdowns, collapses, carousels, toasts, tooltips, popovers, tabs, and offcanvas menus. The bundle file includes Popper, which is needed for tooltips and popovers.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-lg-4">
+        <article class="card bg-body-tertiary border-secondary h-100">
+          <div class="card-body p-4">
+            <div class="d-flex gap-3 align-items-start mb-3">
+              <div class="folder-mark">ICO</div>
+              <div>
+                <h2 class="h5 mb-1">Icons Folder</h2>
+                <p class="text-secondary small mb-0">Stores optional icon assets.</p>
+              </div>
+            </div>
+            <p class="mb-2">
+              Bootstrap Icons may be downloaded separately and stored in an icons folder as SVG files or icon font assets.
+            </p>
+            <p class="text-secondary mb-0">
+              Icons are used to improve buttons, navigation, status messages, dashboards, and forms. They are optional: Bootstrap's layout and components still work without them.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="card bg-body-tertiary border-secondary mt-4">
+      <div class="card-body p-4">
+        <h2 class="h5 mb-3">Summary</h2>
+        <div class="table-responsive">
+          <table class="table table-dark table-striped table-hover align-middle mb-0">
+            <thead>
+              <tr>
+                <th scope="col">Folder</th>
+                <th scope="col">Main purpose</th>
+                <th scope="col">Example files</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>css</code></td>
+                <td>Provides Bootstrap styling and responsive layout utilities.</td>
+                <td><code>bootstrap.css</code>, <code>bootstrap.min.css</code></td>
+              </tr>
+              <tr>
+                <td><code>js</code></td>
+                <td>Provides interactive component behavior.</td>
+                <td><code>bootstrap.js</code>, <code>bootstrap.bundle.min.js</code></td>
+              </tr>
+              <tr>
+                <td><code>icons</code></td>
+                <td>Provides optional visual symbols for UI elements.</td>
+                <td><code>.svg</code> icons or icon font files</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

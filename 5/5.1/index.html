@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 5.1 - Center Content in a Bootstrap Row</title>
+
+  <link rel="stylesheet" href="../../1/1.2/bootstrap.min.css" />
+
+  <style>
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 18% 10%, rgba(13, 202, 240, 0.18), transparent 28rem),
+        linear-gradient(135deg, #101418 0%, #18212f 50%, #111827 100%);
+    }
+
+    .page-shell {
+      max-width: 1120px;
+    }
+
+    .center-stage {
+      min-height: 360px;
+      border-radius: 8px;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        rgba(0, 0, 0, 0.18);
+      background-size: 32px 32px;
+    }
+
+    .demo-box {
+      border-radius: 8px;
+      max-width: 430px;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.24);
+    }
+
+    .axis-line-x,
+    .axis-line-y {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.35;
+    }
+
+    .axis-line-x {
+      top: 50%;
+      left: 0;
+      width: 100%;
+      border-top: 2px dashed var(--bs-info);
+    }
+
+    .axis-line-y {
+      top: 0;
+      left: 50%;
+      height: 100%;
+      border-left: 2px dashed var(--bs-info);
+    }
+
+    .class-chip {
+      display: inline-block;
+      margin: 0.15rem 0.1rem 0 0;
+    }
+  </style>
+</head>
+<body class="text-light">
+  <header class="border-bottom border-secondary-subtle py-4">
+    <div class="container page-shell">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+        <div>
+          <p class="text-info fw-semibold mb-1">Exercise 5.1</p>
+          <h1 class="h3 mb-2">Center Content Inside a Row</h1>
+          <p class="text-secondary mb-0">
+            Use <code>justify-content-center</code> for horizontal centering and <code>align-items-center</code> for vertical centering.
+          </p>
+        </div>
+        <span id="stateBadge" class="badge text-bg-info fs-6">Centered</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page-shell py-4">
+    <section class="card bg-body-tertiary border-secondary mb-4">
+      <div class="card-body p-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-12 col-lg-8">
+            <h2 class="h5 mb-1">Required row classes</h2>
+            <p class="text-secondary mb-0">
+              The demo area below uses <code>.row.justify-content-center.align-items-center</code>.
+            </p>
+          </div>
+          <div class="col-12 col-lg-4 text-lg-end">
+            <button id="toggleCenterButton" class="btn btn-outline-info" type="button" aria-pressed="true">
+              Turn Centering Off
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card bg-body-tertiary border-secondary">
+      <div class="card-body p-4">
+        <div id="centerStage" class="row center-stage justify-content-center align-items-center position-relative g-0">
+          <div class="axis-line-x" aria-hidden="true"></div>
+          <div class="axis-line-y" aria-hidden="true"></div>
+
+          <div class="col-10 col-sm-8 col-md-6 col-lg-5">
+            <article class="demo-box bg-dark border border-info p-4 text-center position-relative">
+              <h2 class="h4 mb-2">Centered Content</h2>
+              <p class="text-secondary mb-3">
+                This box is centered horizontally and vertically inside the Bootstrap row.
+              </p>
+              <div>
+                <span class="badge text-bg-info class-chip">row</span>
+                <span class="badge text-bg-success class-chip">justify-content-center</span>
+                <span class="badge text-bg-primary class-chip">align-items-center</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="row g-4 mt-1">
+      <div class="col-12 col-md-6">
+        <div class="p-4 bg-body-tertiary border border-secondary rounded-2 h-100">
+          <h2 class="h5 mb-2">Horizontal center</h2>
+          <p class="text-secondary mb-2">
+            <code>justify-content-center</code> centers columns along the row's main axis.
+          </p>
+          <code>&lt;div class="row justify-content-center"&gt;</code>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="p-4 bg-body-tertiary border border-secondary rounded-2 h-100">
+          <h2 class="h5 mb-2">Vertical center</h2>
+          <p class="text-secondary mb-2">
+            <code>align-items-center</code> centers columns along the row's cross axis.
+          </p>
+          <code>&lt;div class="row align-items-center"&gt;</code>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>

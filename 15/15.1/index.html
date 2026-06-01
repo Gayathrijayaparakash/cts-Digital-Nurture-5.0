@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 15.1 - Border Utilities</title>
+
+  <link rel="stylesheet" href="../../1/1.2/bootstrap.min.css" />
+
+  <style>
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(13, 110, 253, 0.18), transparent 24rem),
+        radial-gradient(circle at 84% 18%, rgba(13, 202, 240, 0.14), transparent 22rem),
+        linear-gradient(135deg, #101418 0%, #172033 54%, #111827 100%);
+    }
+
+    .page-shell {
+      max-width: 1040px;
+    }
+
+    .demo-panel,
+    .utility-panel {
+      border-radius: 8px;
+    }
+
+    .image-frame {
+      width: min(100%, 280px);
+    }
+
+    .profile-image {
+      width: 240px;
+      height: 240px;
+      object-fit: cover;
+      box-shadow: 0 1rem 2.5rem rgba(13, 110, 253, 0.28);
+    }
+
+    .sample-dot {
+      width: 4rem;
+      height: 4rem;
+    }
+  </style>
+</head>
+<body class="text-light">
+  <main class="container page-shell py-5">
+    <section class="demo-panel bg-body-tertiary border border-secondary p-4 p-md-5 shadow-sm mb-4">
+      <div class="row align-items-center g-4">
+        <div class="col-12 col-lg-auto">
+          <div class="image-frame mx-auto text-center bg-dark border border-secondary rounded-2 p-4">
+            <img
+              class="profile-image img-fluid border border-primary border-3 rounded-circle"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='25' x2='215' y1='25' y2='220' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%230d6efd'/%3E%3Cstop offset='1' stop-color='%230dcaf0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='240' height='240' fill='url(%23bg)'/%3E%3Ccircle cx='120' cy='91' r='45' fill='%23ffffff' opacity='.94'/%3E%3Cpath d='M34 240c11-57 45-91 86-91s75 34 86 91z' fill='%23ffffff' opacity='.94'/%3E%3Ccircle cx='190' cy='46' r='24' fill='%23ffc107' opacity='.92'/%3E%3Cpath d='M42 62h52v16H42z' fill='%23ffffff' opacity='.36'/%3E%3Cpath d='M155 165h48v14h-48z' fill='%23ffffff' opacity='.32'/%3E%3C/svg%3E"
+              alt="Circular profile illustration with a thick primary Bootstrap border"
+            />
+          </div>
+        </div>
+
+        <div class="col-12 col-lg">
+          <p class="text-info fw-semibold mb-2">Exercise 15.1</p>
+          <h1 class="display-6 fw-bold mb-3">Border Utility Image</h1>
+          <p class="lead text-secondary mb-4">
+            This image uses Bootstrap border utilities to add a thick primary circular border.
+          </p>
+
+          <div class="utility-panel bg-dark border border-secondary p-3 mb-4">
+            <code class="text-info">
+              class="img-fluid border border-primary border-3 rounded-circle"
+            </code>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-6 col-md-3">
+              <div class="utility-panel border border-secondary p-3 h-100">
+                <p class="fw-semibold mb-1">border</p>
+                <p class="small text-secondary mb-0">Turns on the border.</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="utility-panel border border-primary p-3 h-100">
+                <p class="fw-semibold mb-1">border-primary</p>
+                <p class="small text-secondary mb-0">Sets the color.</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="utility-panel border border-primary border-3 p-3 h-100">
+                <p class="fw-semibold mb-1">border-3</p>
+                <p class="small text-secondary mb-0">Increases width.</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="utility-panel border border-primary border-3 p-3 h-100">
+                <p class="fw-semibold mb-1">rounded-circle</p>
+                <div class="sample-dot rounded-circle border border-primary border-3 bg-info-subtle mx-auto"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="row g-4" aria-label="Border utility examples">
+      <div class="col-12 col-md-4">
+        <article class="utility-panel bg-body-tertiary border border-secondary p-4 h-100">
+          <h2 class="h5 mb-3">Default Border</h2>
+          <div class="sample-dot border bg-body-secondary rounded-2 mb-3"></div>
+          <p class="text-secondary mb-0">A plain <code>border</code> gives the element a standard outline.</p>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <article class="utility-panel bg-body-tertiary border border-primary p-4 h-100">
+          <h2 class="h5 mb-3">Primary Border</h2>
+          <div class="sample-dot border border-primary bg-body-secondary rounded-2 mb-3"></div>
+          <p class="text-secondary mb-0"><code>border-primary</code> applies the theme's primary color.</p>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <article class="utility-panel bg-body-tertiary border border-primary border-3 p-4 h-100">
+          <h2 class="h5 mb-3">Thick Circle</h2>
+          <div class="sample-dot border border-primary border-3 rounded-circle bg-info-subtle mb-3"></div>
+          <p class="text-secondary mb-0"><code>border-3</code> and <code>rounded-circle</code> create the final image style.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

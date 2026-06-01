@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 7.2 - Bootstrap Text Transform Utilities</title>
+
+  <link rel="stylesheet" href="../../1/1.2/bootstrap.min.css" />
+
+  <style>
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 82% 10%, rgba(13, 110, 253, 0.17), transparent 28rem),
+        linear-gradient(135deg, #101418 0%, #1b2533 50%, #111827 100%);
+    }
+
+    .page-shell {
+      max-width: 1120px;
+    }
+
+    .transform-card {
+      min-height: 100%;
+      border-radius: 8px;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .transform-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(13, 110, 253, 0.62);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.22);
+    }
+
+    .mark-box {
+      width: 48px;
+      height: 48px;
+      flex: 0 0 48px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      background: rgba(13, 110, 253, 0.14);
+      border: 1px solid rgba(13, 110, 253, 0.34);
+    }
+
+    .preview-text {
+      min-height: 3rem;
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body class="text-light">
+  <header class="border-bottom border-secondary-subtle py-4">
+    <div class="container page-shell">
+      <p class="text-primary fw-semibold mb-1">Exercise 7.2</p>
+      <h1 class="display-5 fw-bold mb-2">Text Transform Utilities</h1>
+      <p class="lead text-secondary mb-0">
+        Use <code>text-uppercase</code>, <code>text-lowercase</code>, and <code>text-capitalize</code>.
+      </p>
+    </div>
+  </header>
+
+  <main class="container page-shell py-4">
+    <section class="card bg-body-tertiary border-secondary mb-4">
+      <div class="card-body p-4">
+        <label for="sampleInput" class="form-label fw-semibold">Type sample text</label>
+        <input id="sampleInput" class="form-control form-control-lg bg-dark text-light border-secondary" type="text" value="bootstrap text utilities are useful" />
+        <p class="text-secondary small mb-0 mt-2">
+          The cards below apply Bootstrap text transform classes to this text.
+        </p>
+      </div>
+    </section>
+
+    <section class="row g-4" aria-label="Text transform examples">
+      <div class="col-12 col-lg-4">
+        <article class="card transform-card bg-body-tertiary border-secondary">
+          <div class="card-body p-4">
+            <div class="d-flex gap-3 align-items-start mb-3">
+              <div class="mark-box">UP</div>
+              <div>
+                <h2 class="h5 mb-1">Uppercase</h2>
+                <p class="text-secondary small mb-0">Transforms letters to uppercase.</p>
+              </div>
+            </div>
+            <div id="uppercasePreview" class="preview-text text-uppercase border border-secondary p-3 fs-5">
+              bootstrap text utilities are useful
+            </div>
+            <span class="badge text-bg-primary mt-3">text-uppercase</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-lg-4">
+        <article class="card transform-card bg-body-tertiary border-secondary">
+          <div class="card-body p-4">
+            <div class="d-flex gap-3 align-items-start mb-3">
+              <div class="mark-box">lo</div>
+              <div>
+                <h2 class="h5 mb-1">Lowercase</h2>
+                <p class="text-secondary small mb-0">Transforms letters to lowercase.</p>
+              </div>
+            </div>
+            <div id="lowercasePreview" class="preview-text text-lowercase border border-secondary p-3 fs-5">
+              Bootstrap Text Utilities Are Useful
+            </div>
+            <span class="badge text-bg-info mt-3">text-lowercase</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-lg-4">
+        <article class="card transform-card bg-body-tertiary border-secondary">
+          <div class="card-body p-4">
+            <div class="d-flex gap-3 align-items-start mb-3">
+              <div class="mark-box">Ca</div>
+              <div>
+                <h2 class="h5 mb-1">Capitalize</h2>
+                <p class="text-secondary small mb-0">Capitalizes the first letter of each word.</p>
+              </div>
+            </div>
+            <div id="capitalizePreview" class="preview-text text-capitalize border border-secondary p-3 fs-5">
+              bootstrap text utilities are useful
+            </div>
+            <span class="badge text-bg-success mt-3">text-capitalize</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="card bg-body-tertiary border-secondary mt-4">
+      <div class="card-body p-4">
+        <h2 class="h5 mb-3">Summary</h2>
+        <div class="table-responsive">
+          <table class="table table-dark table-striped table-hover align-middle mb-0">
+            <thead>
+              <tr>
+                <th scope="col">Class</th>
+                <th scope="col">Effect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>text-uppercase</code></td>
+                <td>Displays text in uppercase letters.</td>
+              </tr>
+              <tr>
+                <td><code>text-lowercase</code></td>
+                <td>Displays text in lowercase letters.</td>
+              </tr>
+              <tr>
+                <td><code>text-capitalize</code></td>
+                <td>Capitalizes the first letter of each word.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>

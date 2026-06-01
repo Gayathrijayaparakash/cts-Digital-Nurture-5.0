@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 18.2 - Bootstrap Accordion</title>
+
+  <link rel="stylesheet" href="../../1/1.2/bootstrap.min.css" />
+
+  <style>
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 18% 14%, rgba(13, 110, 253, 0.18), transparent 24rem),
+        radial-gradient(circle at 82% 16%, rgba(25, 135, 84, 0.16), transparent 22rem),
+        linear-gradient(135deg, #101418 0%, #182233 55%, #111827 100%);
+    }
+
+    .page-shell {
+      max-width: 960px;
+    }
+
+    .demo-panel,
+    .status-panel {
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body class="text-light">
+  <main class="container page-shell py-5">
+    <section class="demo-panel bg-body-tertiary border border-secondary shadow-lg p-4 p-md-5 mb-4">
+      <p class="text-info fw-semibold mb-2">Exercise 18.2</p>
+      <h1 class="display-6 fw-bold mb-3">Collapsible Accordion</h1>
+      <p class="lead text-secondary mb-4">
+        This accordion uses Bootstrap's <code>accordion</code> component and JavaScript-powered collapse behavior.
+      </p>
+
+      <div class="d-flex flex-wrap gap-2">
+        <span class="badge text-bg-primary">accordion</span>
+        <span class="badge text-bg-primary">accordion-item</span>
+        <span class="badge text-bg-primary">data-bs-toggle="collapse"</span>
+      </div>
+    </section>
+
+    <section class="accordion shadow-lg mb-4" id="lessonAccordion" aria-label="Bootstrap accordion example">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelOne" aria-expanded="true" aria-controls="panelOne">
+            What does an accordion do?
+          </button>
+        </h2>
+        <div class="accordion-collapse collapse show" id="panelOne" aria-labelledby="headingOne" data-bs-parent="#lessonAccordion">
+          <div class="accordion-body">
+            An accordion stacks sections vertically and lets users expand one section at a time.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelTwo" aria-expanded="false" aria-controls="panelTwo">
+            Which Bootstrap JavaScript behavior is used?
+          </button>
+        </h2>
+        <div class="accordion-collapse collapse" id="panelTwo" aria-labelledby="headingTwo" data-bs-parent="#lessonAccordion">
+          <div class="accordion-body">
+            The accordion uses Bootstrap's collapse plugin through <code>data-bs-toggle="collapse"</code>.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelThree" aria-expanded="false" aria-controls="panelThree">
+            Why use data-bs-parent?
+          </button>
+        </h2>
+        <div class="accordion-collapse collapse" id="panelThree" aria-labelledby="headingThree" data-bs-parent="#lessonAccordion">
+          <div class="accordion-body">
+            <code>data-bs-parent</code> keeps the behavior accordion-like by closing the open panel when another panel opens.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="status-panel bg-body-tertiary border border-secondary p-4">
+      <h2 class="h5 mb-3">Accordion Status</h2>
+      <p class="text-secondary mb-0" id="accordionStatus">
+        Panel one is open.
+      </p>
+    </section>
+  </main>
+
+  <script src="../../1/1.2/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

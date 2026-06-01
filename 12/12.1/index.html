@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 12.1 - Bootstrap Margin and Padding Utilities</title>
+
+  <link rel="stylesheet" href="../../1/1.2/bootstrap.min.css" />
+
+  <style>
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 80% 10%, rgba(255, 193, 7, 0.16), transparent 28rem),
+        linear-gradient(135deg, #101418 0%, #1b2533 52%, #111827 100%);
+    }
+
+    .page-shell {
+      max-width: 1040px;
+    }
+
+    .utility-box {
+      border-radius: 8px;
+      min-height: 150px;
+    }
+
+    .section-label {
+      letter-spacing: 0;
+    }
+  </style>
+</head>
+<body class="text-light">
+  <header class="border-bottom border-secondary-subtle py-5">
+    <div class="container page-shell">
+      <p class="text-warning fw-semibold mb-1">Exercise 12.1</p>
+      <h1 class="display-6 fw-bold mb-2">Margin and Padding Utilities</h1>
+      <p class="lead text-secondary mb-0">
+        Apply Bootstrap spacing utilities on layout sections using <code>m-3</code>, <code>mt-4</code>, <code>p-2</code>, and <code>py-5</code>.
+      </p>
+    </div>
+  </header>
+
+  <main class="container page-shell py-4">
+    <section class="bg-body-tertiary border border-secondary m-3 p-2 utility-box">
+      <p class="section-label text-warning fw-semibold mb-2">Section 1: <code>m-3 p-2</code></p>
+      <h2 class="h4 mb-2">Compact Content Block</h2>
+      <p class="text-secondary mb-0">
+        This section has margin on all sides with <code>m-3</code> and compact padding inside with <code>p-2</code>.
+      </p>
+    </section>
+
+    <section class="bg-body-tertiary border border-secondary mt-4 py-5 utility-box">
+      <div class="px-3">
+        <p class="section-label text-info fw-semibold mb-2">Section 2: <code>mt-4 py-5</code></p>
+        <h2 class="h4 mb-2">Tall Vertical Spacing</h2>
+        <p class="text-secondary mb-0">
+          This section starts lower because of <code>mt-4</code> and has large top and bottom padding from <code>py-5</code>.
+        </p>
+      </div>
+    </section>
+
+    <section class="row g-4 mt-4" aria-label="Spacing utility examples">
+      <div class="col-12 col-md-6">
+        <article class="bg-primary-subtle text-primary-emphasis border border-primary-subtle m-3 p-2 utility-box">
+          <h2 class="h5 mb-2">Card with <code>m-3</code></h2>
+          <p class="mb-0">
+            The outside spacing separates this card from nearby content.
+          </p>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <article class="bg-success-subtle text-success-emphasis border border-success-subtle mt-4 py-5 utility-box">
+          <div class="px-3">
+            <h2 class="h5 mb-2">Card with <code>py-5</code></h2>
+            <p class="mb-0">
+              The vertical padding creates a taller, more open layout area.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

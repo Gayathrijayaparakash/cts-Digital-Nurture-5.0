@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 17.1 - Bootstrap Icons</title>
+
+  <link rel="stylesheet" href="../../1/1.2/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <style>
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 18% 14%, rgba(13, 110, 253, 0.18), transparent 24rem),
+        radial-gradient(circle at 82% 16%, rgba(13, 202, 240, 0.14), transparent 22rem),
+        linear-gradient(135deg, #101418 0%, #182233 55%, #111827 100%);
+    }
+
+    .page-shell {
+      max-width: 1040px;
+    }
+
+    .demo-panel,
+    .feature-panel {
+      border-radius: 8px;
+    }
+
+    .social-link {
+      width: 2.75rem;
+      height: 2.75rem;
+    }
+  </style>
+</head>
+<body class="text-light">
+  <main class="container page-shell py-5">
+    <section class="demo-panel bg-body-tertiary border border-secondary shadow-lg p-4 p-md-5 mb-4">
+      <p class="text-info fw-semibold mb-2">Exercise 17.1</p>
+      <h1 class="display-6 fw-bold mb-3">Bootstrap Icons Footer</h1>
+      <p class="lead text-secondary mb-4">
+        Bootstrap Icons are loaded with a stylesheet link, then used as social media icons in the footer.
+      </p>
+
+      <div class="d-flex flex-wrap gap-2">
+        <span class="badge text-bg-primary">bootstrap-icons</span>
+        <span class="badge text-bg-primary">bi-facebook</span>
+        <span class="badge text-bg-primary">bi-instagram</span>
+        <span class="badge text-bg-primary">bi-linkedin</span>
+      </div>
+    </section>
+
+    <section class="row g-4 mb-5" aria-label="Bootstrap icon details">
+      <div class="col-12 col-md-6">
+        <article class="feature-panel bg-body-tertiary border border-secondary p-4 h-100">
+          <h2 class="h5 mb-3">
+            <i class="bi bi-stars text-warning me-2" aria-hidden="true"></i>
+            Icon Font
+          </h2>
+          <p class="text-secondary mb-0">
+            Each social button uses an icon class such as <code>bi bi-twitter-x</code>.
+          </p>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <article class="feature-panel bg-primary-subtle text-primary-emphasis border border-primary-subtle p-4 h-100">
+          <h2 class="h5 mb-3">
+            <i class="bi bi-lightning-charge-fill me-2" aria-hidden="true"></i>
+            Bootstrap JS
+          </h2>
+          <p class="mb-0">
+            Tooltips and a toast are initialized from <code>script.js</code> using Bootstrap's JavaScript bundle.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-dark border-top border-secondary shadow-lg">
+    <div class="container page-shell py-4">
+      <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+        <div class="text-center text-md-start">
+          <p class="fw-semibold mb-1">Bootstrap Icons Demo</p>
+          <p class="text-secondary mb-0">Follow us on social media</p>
+        </div>
+
+        <div class="d-flex gap-2" aria-label="Social media links">
+          <a class="social-link btn btn-outline-light rounded-circle d-inline-flex align-items-center justify-content-center" href="#" aria-label="Facebook" data-bs-toggle="tooltip" data-bs-title="Facebook">
+            <i class="bi bi-facebook fs-5" aria-hidden="true"></i>
+          </a>
+          <a class="social-link btn btn-outline-light rounded-circle d-inline-flex align-items-center justify-content-center" href="#" aria-label="Instagram" data-bs-toggle="tooltip" data-bs-title="Instagram">
+            <i class="bi bi-instagram fs-5" aria-hidden="true"></i>
+          </a>
+          <a class="social-link btn btn-outline-light rounded-circle d-inline-flex align-items-center justify-content-center" href="#" aria-label="LinkedIn" data-bs-toggle="tooltip" data-bs-title="LinkedIn">
+            <i class="bi bi-linkedin fs-5" aria-hidden="true"></i>
+          </a>
+          <a class="social-link btn btn-outline-light rounded-circle d-inline-flex align-items-center justify-content-center" href="#" aria-label="X" data-bs-toggle="tooltip" data-bs-title="X">
+            <i class="bi bi-twitter-x fs-5" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <button class="btn btn-info" type="button" id="showToastBtn">
+          <i class="bi bi-bell-fill me-2" aria-hidden="true"></i>
+          Show Toast
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div class="toast text-bg-dark border border-secondary" id="socialToast" role="status" aria-live="polite" aria-atomic="true">
+      <div class="toast-header">
+        <i class="bi bi-bootstrap-fill text-primary me-2" aria-hidden="true"></i>
+        <strong class="me-auto">Bootstrap JS</strong>
+        <button class="btn-close" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Bootstrap Icons and JavaScript are both working on this page.
+      </div>
+    </div>
+  </div>
+
+  <script src="../../1/1.2/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

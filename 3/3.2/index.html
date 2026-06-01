@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 3.2 - Bootstrap Container Row Column Classes</title>
+
+  <link rel="stylesheet" href="../../1/1.2/bootstrap.min.css" />
+
+  <style>
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 86% 12%, rgba(25, 135, 84, 0.18), transparent 26rem),
+        linear-gradient(135deg, #101418 0%, #18212f 48%, #111827 100%);
+    }
+
+    .page-shell {
+      max-width: 1140px;
+    }
+
+    .demo-panel {
+      min-height: 100%;
+      border-radius: 8px;
+      transition: transform 180ms ease, border-color 180ms ease;
+    }
+
+    .demo-panel:hover {
+      transform: translateY(-3px);
+      border-color: rgba(25, 135, 84, 0.65);
+    }
+
+    .grid-label {
+      width: 48px;
+      height: 48px;
+      flex: 0 0 48px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      background: rgba(25, 135, 84, 0.14);
+      border: 1px solid rgba(25, 135, 84, 0.34);
+    }
+
+    .class-pill {
+      display: inline-block;
+      margin: 0.15rem 0.1rem 0 0;
+    }
+
+    .layout-outline .row {
+      outline: 2px dashed rgba(25, 135, 84, 0.45);
+      outline-offset: 6px;
+    }
+
+    .layout-outline [class*="col-"] > .demo-panel,
+    .layout-outline [class*="col-"] > .p-3 {
+      outline: 2px solid rgba(13, 202, 240, 0.45);
+      outline-offset: -4px;
+    }
+  </style>
+</head>
+<body class="text-light">
+  <header class="border-bottom border-secondary-subtle py-4">
+    <div class="container page-shell">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+        <div>
+          <p class="text-success fw-semibold mb-1">Exercise 3.2</p>
+          <h1 class="h3 mb-2">Using <code>.container</code>, <code>.row</code>, and <code>.col-*</code></h1>
+          <p class="text-secondary mb-0">
+            A responsive Bootstrap page built with the core grid classes.
+          </p>
+        </div>
+        <div class="text-lg-end">
+          <span id="breakpointBadge" class="badge text-bg-success fs-6">Checking...</span>
+          <div id="viewportText" class="text-secondary small mt-2">Viewport width: -- px</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="layoutDemo" class="container page-shell py-4">
+    <section class="card bg-body-tertiary border-secondary mb-4">
+      <div class="card-body p-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-12 col-lg-8">
+            <h2 class="h5 mb-2">Responsive design rule</h2>
+            <p class="text-secondary mb-0">
+              Use <code>.container</code> to center page content, <code>.row</code> to create horizontal groups,
+              and <code>.col-*</code> classes to control how much width each item uses at different breakpoints.
+            </p>
+          </div>
+          <div class="col-12 col-lg-4 text-lg-end">
+            <button id="outlineButton" class="btn btn-outline-success" type="button" aria-pressed="false">
+              Show Grid Outlines
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-4" aria-label="Main content and sidebar layout">
+      <div class="row g-4">
+        <div class="col-12 col-lg-8">
+          <article class="card demo-panel bg-body-tertiary border-secondary">
+            <div class="card-body p-4">
+              <div class="d-flex gap-3 align-items-start mb-3">
+                <div class="grid-label">8</div>
+                <div>
+                  <h2 class="h5 mb-1">Main Content</h2>
+                  <p class="text-secondary small mb-0">Full width on mobile, wider area on desktop.</p>
+                </div>
+              </div>
+              <p>
+                This area uses <code>col-12 col-lg-8</code>. On smaller screens it fills the whole row.
+                On large screens it uses 8 of Bootstrap's 12 columns.
+              </p>
+              <span class="badge text-bg-info class-pill">col-12</span>
+              <span class="badge text-bg-success class-pill">col-lg-8</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-lg-4">
+          <aside class="card demo-panel bg-body-tertiary border-secondary">
+            <div class="card-body p-4">
+              <div class="d-flex gap-3 align-items-start mb-3">
+                <div class="grid-label">4</div>
+                <div>
+                  <h2 class="h5 mb-1">Sidebar</h2>
+                  <p class="text-secondary small mb-0">Stacks below content on mobile.</p>
+                </div>
+              </div>
+              <p>
+                This sidebar uses <code>col-12 col-lg-4</code>. Together with the main content, it fills all 12 desktop columns.
+              </p>
+              <span class="badge text-bg-info class-pill">col-12</span>
+              <span class="badge text-bg-success class-pill">col-lg-4</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-4" aria-label="Feature cards layout">
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="p-3 bg-dark border border-secondary rounded-2 h-100">
+            <h3 class="h6">Feature One</h3>
+            <p class="text-secondary small mb-2">Stacks on mobile, halves on tablet, quarters on wide desktop.</p>
+            <code>col-12 col-md-6 col-xl-3</code>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="p-3 bg-dark border border-secondary rounded-2 h-100">
+            <h3 class="h6">Feature Two</h3>
+            <p class="text-secondary small mb-2">The row uses <code>g-4</code> for responsive spacing.</p>
+            <code>col-12 col-md-6 col-xl-3</code>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="p-3 bg-dark border border-secondary rounded-2 h-100">
+            <h3 class="h6">Feature Three</h3>
+            <p class="text-secondary small mb-2">Column widths adapt automatically at breakpoints.</p>
+            <code>col-12 col-md-6 col-xl-3</code>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-3">
+          <div class="p-3 bg-dark border border-secondary rounded-2 h-100">
+            <h3 class="h6">Feature Four</h3>
+            <p class="text-secondary small mb-2">Four cards fit in one row on extra-large screens.</p>
+            <code>col-12 col-md-6 col-xl-3</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card bg-body-tertiary border-secondary">
+      <div class="card-body p-4">
+        <h2 class="h5 mb-3">Class summary</h2>
+        <div class="table-responsive">
+          <table class="table table-dark table-striped table-hover align-middle mb-0">
+            <thead>
+              <tr>
+                <th scope="col">Class</th>
+                <th scope="col">Purpose</th>
+                <th scope="col">Used here for</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>.container</code></td>
+                <td>Centers content and adds responsive horizontal padding.</td>
+                <td>Header and main page wrapper.</td>
+              </tr>
+              <tr>
+                <td><code>.row</code></td>
+                <td>Creates a flex grid row and manages gutters between columns.</td>
+                <td>Hero info, content/sidebar, and feature sections.</td>
+              </tr>
+              <tr>
+                <td><code>.col-*</code></td>
+                <td>Controls column width across Bootstrap breakpoints.</td>
+                <td><code>col-12</code>, <code>col-md-6</code>, <code>col-lg-8</code>, <code>col-lg-4</code>, <code>col-xl-3</code>.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>

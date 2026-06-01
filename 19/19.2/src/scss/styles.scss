@@ -1,0 +1,10 @@
+@import "variables";
+@import "bootstrap/scss/bootstrap";
+
+body {
+  min-height: 100vh;
+}
+
+.navbar {
+  box-shadow: 0 .75rem 1.75rem rgba(124, 58, 237, .18);
+}

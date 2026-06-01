@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 13.1 - Contextual Dashboard</title>
+
+  <link rel="stylesheet" href="../../1/1.2/bootstrap.min.css" />
+
+  <style>
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 20% 12%, rgba(13, 110, 253, 0.16), transparent 28rem),
+        radial-gradient(circle at 82% 14%, rgba(255, 193, 7, 0.13), transparent 24rem),
+        linear-gradient(135deg, #101418 0%, #1b2533 52%, #111827 100%);
+    }
+
+    .page-shell {
+      max-width: 1120px;
+    }
+
+    .dashboard-card {
+      border-radius: 8px;
+      min-height: 150px;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .dashboard-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.22);
+    }
+
+    .status-dot {
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 50%;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body class="text-light">
+  <header class="border-bottom border-secondary-subtle py-5">
+    <div class="container page-shell">
+      <p class="text-primary fw-semibold mb-2">Exercise 13.1</p>
+      <h1 class="display-6 fw-bold mb-3">Contextual Dashboard</h1>
+      <p class="lead text-secondary mb-0">
+        A dashboard page using Bootstrap contextual background classes and text colors.
+      </p>
+    </div>
+  </header>
+
+  <main class="container page-shell py-5">
+    <section class="row g-4 mb-5" aria-label="Dashboard summary cards">
+      <div class="col-12 col-sm-6 col-lg-3">
+        <article class="dashboard-card bg-primary text-white p-4">
+          <p class="fw-semibold mb-2">Revenue</p>
+          <h2 class="display-6 fw-bold mb-2">$48k</h2>
+          <p class="mb-0 text-white-50">Up 12% this month</p>
+        </article>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <article class="dashboard-card bg-success text-white p-4">
+          <p class="fw-semibold mb-2">Orders</p>
+          <h2 class="display-6 fw-bold mb-2">1,284</h2>
+          <p class="mb-0 text-white-50">342 completed today</p>
+        </article>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <article class="dashboard-card bg-warning text-dark p-4">
+          <p class="fw-semibold mb-2">Pending</p>
+          <h2 class="display-6 fw-bold mb-2">38</h2>
+          <p class="mb-0 text-dark opacity-75">Needs review</p>
+        </article>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <article class="dashboard-card bg-danger text-white p-4">
+          <p class="fw-semibold mb-2">Alerts</p>
+          <h2 class="display-6 fw-bold mb-2">7</h2>
+          <p class="mb-0 text-white-50">High priority issues</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="row g-4">
+      <div class="col-12 col-lg-7">
+        <article class="bg-body-tertiary border border-secondary p-4 rounded-2 h-100">
+          <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+            <div>
+              <h2 class="h4 mb-1">Project Status</h2>
+              <p class="text-secondary mb-0">Contextual color classes make each state easy to scan.</p>
+            </div>
+            <span class="badge bg-info text-dark">Live</span>
+          </div>
+
+          <div class="vstack gap-3">
+            <div class="d-flex justify-content-between align-items-center bg-success-subtle text-success-emphasis p-3 rounded-2">
+              <span><span class="status-dot bg-success me-2"></span>Website redesign</span>
+              <span class="fw-semibold">Complete</span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center bg-warning-subtle text-warning-emphasis p-3 rounded-2">
+              <span><span class="status-dot bg-warning me-2"></span>Payment testing</span>
+              <span class="fw-semibold">Pending</span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center bg-danger-subtle text-danger-emphasis p-3 rounded-2">
+              <span><span class="status-dot bg-danger me-2"></span>Server incident</span>
+              <span class="fw-semibold">Critical</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-lg-5">
+        <article class="bg-body-tertiary border border-secondary p-4 rounded-2 h-100">
+          <h2 class="h4 mb-4">Color Utility Summary</h2>
+          <div class="table-responsive">
+            <table class="table table-dark table-striped table-hover align-middle mb-0">
+              <thead>
+                <tr>
+                  <th scope="col">Class</th>
+                  <th scope="col">Used for</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>bg-primary text-white</code></td>
+                  <td>Revenue card</td>
+                </tr>
+                <tr>
+                  <td><code>bg-warning text-dark</code></td>
+                  <td>Pending card</td>
+                </tr>
+                <tr>
+                  <td><code>bg-danger text-white</code></td>
+                  <td>Alert card</td>
+                </tr>
+                <tr>
+                  <td><code>bg-success-subtle text-success-emphasis</code></td>
+                  <td>Status row</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
