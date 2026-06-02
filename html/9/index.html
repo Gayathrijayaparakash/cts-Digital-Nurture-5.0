@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 9 | Geolocation</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #eaffea;
+      background: #040704;
+      padding: 24px;
+    }
+    main {
+      width: min(760px, 100%);
+      margin: 0 auto;
+      background: #081108;
+      border: 1px solid #39ff14;
+      padding: 24px;
+    }
+    h1 { color: #39ff14; margin-top: 0; }
+    button {
+      padding: 12px 16px;
+      color: #020402;
+      background: #39ff14;
+      border: 0;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    #locationOutput {
+      margin-top: 18px;
+      min-height: 90px;
+      padding: 16px;
+      background: #020402;
+      border: 1px solid #1fbf10;
+      color: #caffca;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav style="width:min(760px,100%);margin:0 auto 18px;">
+    <a href="#map" style="color:#39ff14;">Nearby Events</a>
+  </nav>
+
+  <!-- Main -->
+  <main id="map">
+    <h1>Find Nearby Events</h1>
+    <p>Click the button and allow location access to display your current coordinates.</p>
+    <button type="button" onclick="findNearbyEvents()">Find Nearby Events</button>
+    <div id="locationOutput">Coordinates will appear here.</div>
+  </main>
+
+  <!-- Footer -->
+  <footer style="width:min(760px,100%);margin:24px auto;color:#baffba;">
+    <p>Exercise 9: getCurrentPosition, high accuracy options, and error handling.</p>
+  </footer>
+
+  <script>
+    function findNearbyEvents() {
+      const output = document.getElementById('locationOutput');
+
+      if (!navigator.geolocation) {
+        output.textContent = 'Geolocation is not supported by this browser.';
+        return;
+      }
+
+      output.textContent = 'Requesting location...';
+
+      navigator.geolocation.getCurrentPosition(
+        function (position) {
+          const coords = position.coords;
+          output.textContent =
+            'Latitude: ' + coords.latitude + '\n' +
+            'Longitude: ' + coords.longitude + '\n' +
+            'Accuracy: ' + coords.accuracy + ' meters';
+        },
+        function (error) {
+          if (error.code === error.PERMISSION_DENIED) {
+            output.textContent = 'Permission denied. Please allow location access to find nearby events.';
+          } else if (error.code === error.TIMEOUT) {
+            output.textContent = 'Location request timed out. Try again.';
+          } else {
+            output.textContent = 'Unable to retrieve location. Error code: ' + error.code;
+          }
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 8000,
+          maximumAge: 0
+        }
+      );
+    }
+  </script>
+</body>
+</html>

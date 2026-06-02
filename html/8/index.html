@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 8 | Saving User Preferences</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #eaffea;
+      background: #030603;
+      padding: 24px;
+    }
+    main {
+      width: min(720px, 100%);
+      margin: 0 auto;
+      background: #081108;
+      border: 1px solid #39ff14;
+      padding: 24px;
+    }
+    h1 { color: #39ff14; margin-top: 0; }
+    label { display: block; margin-bottom: 8px; }
+    select {
+      width: 100%;
+      padding: 12px;
+      color: #eaffea;
+      background: #020402;
+      border: 1px solid #1fbf10;
+      font: inherit;
+    }
+    button {
+      margin-top: 18px;
+      padding: 12px 16px;
+      color: #020402;
+      background: #39ff14;
+      border: 0;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .status { color: #39ff14; font-weight: 700; min-height: 24px; }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav style="width:min(720px,100%);margin:0 auto 18px;">
+    <a href="#preferences" style="color:#39ff14;">Preferences</a>
+  </nav>
+
+  <!-- Main -->
+  <main id="preferences">
+    <h1>Save Your Preferred Event Type</h1>
+    <label for="preferredEvent">Preferred Event Type</label>
+    <select id="preferredEvent" onchange="savePreference()">
+      <option value="">Choose a preference</option>
+      <option value="Park Cleanup">Park Cleanup</option>
+      <option value="Music Night">Music Night</option>
+      <option value="Health Camp">Health Camp</option>
+      <option value="Coding Camp">Coding Camp</option>
+    </select>
+
+    <button type="button" onclick="clearPreferences()">Clear Preferences</button>
+    <p id="storageStatus" class="status"></p>
+  </main>
+
+  <!-- Footer -->
+  <footer style="width:min(720px,100%);margin:24px auto;color:#baffba;">
+    <p>Exercise 8: localStorage, sessionStorage, retrieval, and deletion.</p>
+  </footer>
+
+  <script>
+    const select = document.getElementById('preferredEvent');
+    const status = document.getElementById('storageStatus');
+
+    window.addEventListener('load', function () {
+      const saved = localStorage.getItem('preferredEventType');
+      if (saved) {
+        select.value = saved;
+        status.textContent = 'Loaded saved preference: ' + saved;
+      } else {
+        status.textContent = 'No saved preference yet.';
+      }
+    });
+
+    function savePreference() {
+      localStorage.setItem('preferredEventType', select.value);
+      sessionStorage.setItem('lastPreferenceChange', new Date().toLocaleString());
+      status.textContent = 'Saved preference: ' + select.value;
+    }
+
+    function clearPreferences() {
+      localStorage.clear();
+      sessionStorage.clear();
+      select.value = '';
+      status.textContent = 'Preferences cleared from localStorage and sessionStorage.';
+    }
+  </script>
+</body>
+</html>

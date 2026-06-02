@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 3 | Welcome Styling</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #f1fff1;
+      background: #040704;
+      padding: 28px;
+    }
+    #welcomeBanner {
+      background: #064fbd;
+      border: 2px solid #39ff14;
+      box-shadow: 0 0 18px rgba(57, 255, 20, 0.35);
+      padding: 26px;
+      max-width: 920px;
+      margin: 0 auto 24px;
+    }
+    .highlight {
+      color: #39ff14;
+      border-bottom: 2px solid #39ff14;
+      font-weight: 700;
+    }
+    main {
+      max-width: 920px;
+      margin: 0 auto;
+      background: #0b120b;
+      padding: 24px;
+      border: 1px solid #1b7f12;
+    }
+    h1, h2 { margin-top: 0; }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav style="max-width:920px;margin:0 auto 18px;">
+    <a href="#welcomeBanner" style="color:#39ff14;">Welcome</a>
+  </nav>
+
+  <!-- Main -->
+  <div id="welcomeBanner">
+    <h1>Welcome Back, Resident!</h1>
+    <p>Your next community event is almost here. <span style="color: red; font-weight: bold;">Special offer: first aid workshop seats are free this week.</span></p>
+  </div>
+
+  <main>
+    <h2>Styled ID and Class Practice</h2>
+    <p>The banner uses a unique <span class="highlight">id</span>, while repeated emphasis uses the reusable <span class="highlight">highlight</span> class.</p>
+    <p class="highlight">Highlighted notices are used for important council updates.</p>
+  </main>
+
+  <!-- Footer -->
+  <footer style="max-width:920px;margin:24px auto;color:#baffba;">
+    <p>Exercise 3: block elements, inline styling, id selector, and class selector.</p>
+  </footer>
+</body>
+</html>

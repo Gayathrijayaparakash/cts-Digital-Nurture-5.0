@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 2 | Navigation and Linking</title>
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #eaffea;
+      background: #030603;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background: #050905;
+      border-bottom: 1px solid #39ff14;
+      padding: 18px max(20px, calc((100% - 960px) / 2));
+      z-index: 2;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    nav strong { color: #39ff14; margin-right: auto; }
+    a {
+      color: #39ff14;
+      text-decoration: none;
+      border: 1px solid #39ff14;
+      padding: 8px 12px;
+      background: #091109;
+    }
+    main { width: min(960px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0; }
+    section {
+      min-height: 240px;
+      margin-bottom: 24px;
+      padding: 24px;
+      background: #0a110a;
+      border: 1px solid #1c7f11;
+    }
+    h1, h2 { color: #39ff14; }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <nav aria-label="Community portal sections">
+      <strong>Neon City</strong>
+      <a href="#home">Home</a>
+      <a href="#events">Events</a>
+      <a href="#contact">Contact</a>
+      <a href="help.html" target="_blank">Help</a>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <section id="home">
+      <h1>Home</h1>
+      <p>Welcome to the local community event portal. Use the navigation links to jump between page sections.</p>
+    </section>
+
+    <section id="events">
+      <h2>Events</h2>
+      <p>Find cleanup drives, coding camps, street food nights, and public meetings hosted by the city council.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email communitydesk@neoncity.example or visit the council service center for support.</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer style="width:min(960px,calc(100% - 32px));margin:0 auto 30px;color:#baffba;">
+    <p>External help opens in a new tab using target="_blank".</p>
+  </footer>
+</body>
+</html>

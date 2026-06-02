@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 10 | DevTools Debugging</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #eaffea;
+      background: #030603;
+      padding: 24px;
+    }
+    main {
+      width: min(920px, 100%);
+      margin: 0 auto;
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 1fr 1fr;
+    }
+    section {
+      background: #081108;
+      border: 1px solid #39ff14;
+      padding: 22px;
+    }
+    h1, h2 { color: #39ff14; margin-top: 0; }
+    button {
+      padding: 12px 16px;
+      color: #020402;
+      background: #39ff14;
+      border: 0;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .debug-card {
+      min-height: 150px;
+      border: 2px dashed #39ff14;
+      padding: 16px;
+      background: #020402;
+    }
+    .status {
+      margin-top: 14px;
+      color: #39ff14;
+      font-weight: 700;
+      min-height: 24px;
+    }
+    code { color: #39ff14; }
+    @media (max-width: 760px) { main { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav style="width:min(920px,100%);margin:0 auto 18px;">
+    <a href="#debug" style="color:#39ff14;">Debug Lab</a>
+  </nav>
+
+  <!-- Main -->
+  <main id="debug">
+    <section>
+      <h1>Chrome DevTools Debug Lab</h1>
+      <p>Inspect this panel, modify styles live, and watch console messages from the script.</p>
+      <div class="debug-card" id="debugCard">
+        <h2>Layout Test Card</h2>
+        <p>Change border, padding, or background in Inspect Element to experiment with the layout.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Script Console</h2>
+      <p>Click the button, open the Console tab, and add a breakpoint inside <code>calculateVisitors()</code> before reloading.</p>
+      <button type="button" onclick="runDebugDemo()">Run Debug Demo</button>
+      <p id="debugStatus" class="status"></p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer style="width:min(920px,100%);margin:24px auto;color:#baffba;">
+    <p>Exercise 10: inspect styles, view console logs, and debug JavaScript variables.</p>
+  </footer>
+
+  <script>
+    console.log('Community portal debug script loaded.');
+
+    function calculateVisitors(baseCount, newRegistrations) {
+      const totalVisitors = baseCount + newRegistrations;
+      console.log('baseCount:', baseCount);
+      console.log('newRegistrations:', newRegistrations);
+      console.log('totalVisitors:', totalVisitors);
+      return totalVisitors;
+    }
+
+    function runDebugDemo() {
+      const total = calculateVisitors(120, 35);
+      document.getElementById('debugStatus').textContent = 'Expected visitor count: ' + total;
+      console.log('Debug demo finished.');
+    }
+  </script>
+</body>
+</html>

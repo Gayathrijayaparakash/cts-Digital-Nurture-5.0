@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 5 | Event Registration Form</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #eaffea;
+      background: #040704;
+      padding: 24px;
+    }
+    main {
+      width: min(760px, 100%);
+      margin: 0 auto;
+      background: #081108;
+      border: 1px solid #39ff14;
+      padding: 24px;
+    }
+    h1 { color: #39ff14; margin-top: 0; }
+    label { display: block; margin: 14px 0 6px; color: #caffca; }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      color: #eaffea;
+      background: #020402;
+      border: 1px solid #1fbf10;
+      font: inherit;
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    button {
+      margin-top: 18px;
+      padding: 12px 18px;
+      color: #020402;
+      background: #39ff14;
+      border: 0;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    output {
+      display: block;
+      margin-top: 18px;
+      min-height: 42px;
+      color: #39ff14;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav style="width:min(760px,100%);margin:0 auto 18px;">
+    <a href="#registration" style="color:#39ff14;">Registration</a>
+  </nav>
+
+  <!-- Main -->
+  <main>
+    <h1>Register for a Community Event</h1>
+    <form id="registration" onsubmit="showConfirmation(event)">
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" placeholder="Enter your full name" required autofocus>
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" placeholder="name@example.com" required>
+
+      <label for="date">Event Date</label>
+      <input id="date" name="date" type="date" required>
+
+      <label for="eventType">Event Type</label>
+      <select id="eventType" name="eventType" required>
+        <option value="">Choose an event</option>
+        <option>Park Cleanup</option>
+        <option>Music Night</option>
+        <option>Health Camp</option>
+        <option>Town Hall</option>
+      </select>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Tell us anything we should know"></textarea>
+
+      <button type="submit">Submit Registration</button>
+      <output id="confirmation" for="name email date eventType"></output>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer style="width:min(760px,100%);margin:24px auto;color:#baffba;">
+    <p>Exercise 5: input types, validation, placeholder, autofocus, CSS styling, and output.</p>
+  </footer>
+
+  <script>
+    function showConfirmation(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const eventType = document.getElementById('eventType').value;
+      document.getElementById('confirmation').textContent = 'Thank you, ' + name + '. Your registration for ' + eventType + ' is confirmed.';
+    }
+  </script>
+</body>
+</html>

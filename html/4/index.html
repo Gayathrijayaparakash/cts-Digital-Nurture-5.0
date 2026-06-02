@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 4 | Event Image Gallery</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #eaffea;
+      background: #030603;
+      padding: 24px;
+    }
+    main { max-width: 980px; margin: 0 auto; }
+    h1 { color: #39ff14; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #081008;
+      border: 1px solid #39ff14;
+    }
+    td {
+      width: 33.33%;
+      padding: 14px;
+      border: 1px solid #1b7f12;
+      vertical-align: top;
+    }
+    figure { margin: 0; }
+    .event-img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border: 4px solid #39ff14;
+      background: linear-gradient(135deg, #39ff14, #0b120b 55%, #111);
+      display: block;
+    }
+    figcaption {
+      margin-top: 8px;
+      color: #caffca;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav style="max-width:980px;margin:0 auto 18px;">
+    <a href="#gallery" style="color:#39ff14;">Gallery</a>
+  </nav>
+
+  <!-- Main -->
+  <main>
+    <h1>Community Events Gallery</h1>
+    <table id="gallery">
+      <tr>
+        <td>
+          <figure>
+            <img class="event-img" alt="Residents planting saplings in a park" title="Green Park Cleanup" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23040a04'/%3E%3Ccircle cx='90' cy='95' r='45' fill='%2339ff14'/%3E%3Cpath d='M0 220 C80 170 150 245 220 190 S330 210 400 160 L400 300 L0 300 Z' fill='%230f5f12'/%3E%3Ctext x='35' y='265' fill='%23eaffea' font-family='Arial' font-size='30'%3EPark Cleanup%3C/text%3E%3C/svg%3E">
+            <figcaption>Green Park Cleanup</figcaption>
+          </figure>
+        </td>
+        <td>
+          <figure>
+            <img class="event-img" alt="People listening to music near a stage" title="Music Night" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23040a04'/%3E%3Crect x='50' y='110' width='300' height='100' fill='%23115511'/%3E%3Ccircle cx='120' cy='90' r='35' fill='%2339ff14'/%3E%3Ccircle cx='280' cy='90' r='35' fill='%2339ff14'/%3E%3Ctext x='58' y='262' fill='%23eaffea' font-family='Arial' font-size='32'%3EMusic Night%3C/text%3E%3C/svg%3E">
+            <figcaption>City Music Night</figcaption>
+          </figure>
+        </td>
+        <td>
+          <figure>
+            <img class="event-img" alt="Children learning at a computer workshop" title="Youth Coding Camp" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23040a04'/%3E%3Crect x='70' y='65' width='260' height='145' fill='%230a1a0a' stroke='%2339ff14' stroke-width='8'/%3E%3Cpath d='M120 230 L280 230' stroke='%2339ff14' stroke-width='20'/%3E%3Ctext x='50' y='270' fill='%23eaffea' font-family='Arial' font-size='30'%3ECoding Camp%3C/text%3E%3C/svg%3E">
+            <figcaption>Youth Coding Camp</figcaption>
+          </figure>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <figure>
+            <img class="event-img" alt="Food stalls at a community market" title="Street Food Fest" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23040a04'/%3E%3Cpath d='M60 120 L200 50 L340 120 Z' fill='%2339ff14'/%3E%3Crect x='80' y='120' width='240' height='105' fill='%230d4f0d'/%3E%3Ctext x='55' y='268' fill='%23eaffea' font-family='Arial' font-size='30'%3EFood Festival%3C/text%3E%3C/svg%3E">
+            <figcaption>Street Food Festival</figcaption>
+          </figure>
+        </td>
+        <td>
+          <figure>
+            <img class="event-img" alt="Citizens seated at a public meeting" title="Town Hall" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23040a04'/%3E%3Crect x='55' y='70' width='290' height='95' fill='%230e3b0e' stroke='%2339ff14' stroke-width='6'/%3E%3Ccircle cx='100' cy='215' r='24' fill='%2339ff14'/%3E%3Ccircle cx='200' cy='215' r='24' fill='%2339ff14'/%3E%3Ccircle cx='300' cy='215' r='24' fill='%2339ff14'/%3E%3Ctext x='82' y='270' fill='%23eaffea' font-family='Arial' font-size='32'%3ETown Hall%3C/text%3E%3C/svg%3E">
+            <figcaption>Public Town Hall</figcaption>
+          </figure>
+        </td>
+        <td>
+          <figure>
+            <img class="event-img" alt="Volunteers arranging health camp desks" title="Health Camp" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23040a04'/%3E%3Crect x='175' y='55' width='50' height='160' fill='%2339ff14'/%3E%3Crect x='110' y='110' width='180' height='50' fill='%2339ff14'/%3E%3Ctext x='78' y='265' fill='%23eaffea' font-family='Arial' font-size='32'%3EHealth Camp%3C/text%3E%3C/svg%3E">
+            <figcaption>Community Health Camp</figcaption>
+          </figure>
+        </td>
+      </tr>
+    </table>
+  </main>
+
+  <!-- Footer -->
+  <footer style="max-width:980px;margin:24px auto;color:#baffba;">
+    <p>Exercise 4: table layout, images, alt text, titles, borders, and captions.</p>
+  </footer>
+</body>
+</html>
