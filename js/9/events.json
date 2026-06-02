@@ -1,0 +1,5 @@
+[
+  { "name": "Civic Tech Demo", "category": "Learning", "location": "Library Lab" },
+  { "name": "Synth Picnic", "category": "Music", "location": "Central Park" },
+  { "name": "Local Makers Expo", "category": "Workshop", "location": "Town Hall" }
+]
