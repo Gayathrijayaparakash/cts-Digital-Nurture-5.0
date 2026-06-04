@@ -1,0 +1,11 @@
+﻿public class Ex12_MethodOverloading {
+    static int add(int a, int b) { return a + b; }
+    static double add(double a, double b) { return a + b; }
+    static int add(int a, int b, int c) { return a + b + c; }
+
+    public static void main(String[] args) {
+        System.out.println("Two integers: " + add(10, 20));
+        System.out.println("Two doubles: " + add(10.5, 20.25));
+        System.out.println("Three integers: " + add(10, 20, 30));
+    }
+}
